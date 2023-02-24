@@ -1,0 +1,45 @@
+.navbar {
+  height: 60px !important;
+}
+
+#logo {
+  color: #04b616;
+  font-weight: bold;
+}
+
+#navbarScroll {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.text-light {
+  color: #d4d4d4 !important;
+}
+
+#login {
+  background-color: #000000;
+  color: #04b616;
+  border: #04b616 solid 1px;
+  border-radius: 1px;
+  transition: all 1s ease;
+}
+
+#login:hover {
+  background-color: #04b616;
+  border: #04b616 solid 1px;
+  color: #000;
+}
+
+.Toggle {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-toggler {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-collapse {
+  background-color: #000;
+}

@@ -1,0 +1,12 @@
+#banner {
+  height: 80vh;
+}
+#centertext {
+  color: #04b616;
+  line-height: 2;
+  letter-spacing: 2px;
+}
+
+#banner img {
+  pointer-events: none;
+}
