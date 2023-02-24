@@ -3,6 +3,8 @@ import "./App.css";
 import NavScrollExample from "./Nav";
 import Banner from "./Banner";
 import BasicExample from "./Card";
+import Postbox from "./Postbox";
+import ContactUs from "./Contact";
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <NavScrollExample />
       <Banner />
       <BasicExample />
+      <Postbox />
+      <ContactUs />
     </>
   );
 }

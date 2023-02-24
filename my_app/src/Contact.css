@@ -1,0 +1,38 @@
+.contactus {
+  text-align: center;
+  vertical-align: center;
+  background-color: black;
+  padding: 5px;
+  background-image: url("./img/image_contactus.png");
+  height: 60vh;
+}
+
+p, h1{
+  color: white;
+  font-weight: bold;
+}
+
+.emailtext {
+  color: white;
+  background-color: black;
+  border: #04b616 solid 2px;
+  width: 50%;
+
+}
+
+.textArea {
+  width: 50%;
+  color: white;
+  background-color: black;
+  border: #04b616 solid 2px;
+}
+
+.sendbtn {
+  color:  black;
+  font-weight: bold;
+  background-color: #04b616;
+  border: 0cm;
+  padding: 8px 20px;
+  margin-bottom: 10px;
+
+}
