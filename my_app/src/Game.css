@@ -1,0 +1,64 @@
+.gameContainer {
+  border: #04b616 dashed 2px;
+  background: url("./img/gamebg.png");
+  background-size: cover;
+}
+
+.test {
+  border: #04b616 dashed 2px;
+}
+
+.bg-green {
+  background-color: #04b616;
+}
+
+.game-img {
+  max-width: 400px;
+  max-height: 300px;
+  object-fit: cover;
+  filter: brightness(60%);
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+
+#game1 {
+  border: #04b616 solid 10px;
+  border-radius: 50% 80% 30% 70% / 60% 40% 90% 50%;
+}
+#game2 {
+  border: #0077ff solid 10px;
+  border-radius: 90% 80% 90% 50% / 80% 90% 90% 80%;
+}
+#game3 {
+  border: #b6047b solid 10px;
+  border-radius: 70% 60% 30% 70% / 80% 40% 90% 90%;
+}
+#game4 {
+  border: #9204b6 solid 10px;
+  border-radius: 50% 50% 60% 90% / 90% 70% 90% 80%;
+}
+
+#game1:hover,
+#game2:hover,
+#game3:hover,
+#game4:hover {
+  border-radius: 60% 60% 60% 90% / 80% 70% 90% 80%;
+}
+
+.game-img:hover {
+  filter: none;
+}
+
+.gamelink:hover ~ .gameText {
+  filter: blur(2px);
+}
+
+.gameText {
+  color: #14771b;
+  text-shadow: 2px 2px #09f55485;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}

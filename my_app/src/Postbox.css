@@ -1,0 +1,29 @@
+.smallborder {
+  position: relative;
+}
+
+.smallborder:after {
+  content: "";
+  height: 30px;
+  width: 1px;
+  position: absolute;
+  right: 0;
+  top: 30%;
+  background-color: #04b6163b;
+}
+
+tbody {
+  line-height: 30px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 100px;
+  border: #04b616 solid 2px;
+}
+
+.title:hover {
+  color: #04b678;
+}

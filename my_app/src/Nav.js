@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 
 function NavScrollExample() {
   const [scrolling, setScrolling] = useState(false);
@@ -33,30 +34,42 @@ function NavScrollExample() {
         transition: "all 0.5s ease-in-out",
       }}
       sticky="top"
-      className="p-0"
+      className="p-2"
     >
       <Container fluid className="px-3 px-md-5">
-        <Navbar.Brand href="#" id="logo" className="fs-3">
-          {"< FEWD / >"}
-        </Navbar.Brand>
+        <Link to="/" className="text-decoration-none">
+          <Navbar.Brand id="logo" className="fs-4 ">
+            {"<FEWD/>"}
+          </Navbar.Brand>
+        </Link>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           {" "}
           <MenuIcon style={{ color: "#04b616" }} />{" "}
         </Navbar.Toggle>
         <Navbar.Collapse className="text-center">
           <Nav className="m-auto my-2 my-lg-0 text-center">
-            <Nav.Link href="#action1" className="text-light mx-5 my-2 my-md-0">
+            <Link
+              to="/"
+              className="text-light mx-5 my-2 my-md-0 text-decoration-none"
+            >
               Home
-            </Nav.Link>
-            <Nav.Link href="#action2" className="text-light mx-5 my-2 my-md-0">
+            </Link>
+            <Link className="text-light mx-5 my-2 my-md-0 text-decoration-none">
               Posts
-            </Nav.Link>
-            <Nav.Link href="#action2" className="text-light mx-5 my-2 my-md-0">
+            </Link>
+            <Link
+              to="./games"
+              className="text-light mx-5 my-2 my-md-0 text-decoration-none"
+            >
               Games
-            </Nav.Link>
-            <Nav.Link href="#action2" className="text-light mx-5 my-2 my-md-0">
+            </Link>
+            <Link
+              to="./about"
+              className="text-light mx-5 my-2 my-md-0 text-decoration-none"
+            >
               About
-            </Nav.Link>
+            </Link>
           </Nav>
           <Button id="login" className="my-3 my-lg-0 fw-bolder">
             LogIn

@@ -1,0 +1,29 @@
+.contact {
+  background-image: url("./img/image_contactus.png");
+  background-position: cover;
+}
+
+.msg:focus,
+.email:focus {
+  outline: none;
+  border: #04b616 solid 1px;
+  box-shadow: 0 0 15px #04b616;
+}
+
+.msg,
+.email {
+  outline: none;
+  border: #04b616 solid 1px;
+}
+
+#contactbtn {
+  background-color: #04b616;
+  border: none;
+  border-radius: 3px;
+  color: #000;
+  font-weight: bold;
+}
+
+#contactbtn:hover {
+  background-color: #02da18;
+}

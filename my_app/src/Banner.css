@@ -1,12 +1,15 @@
 #banner {
-  height: 80vh;
+  height: 90vh;
 }
+
 #centertext {
   color: #04b616;
   line-height: 2;
   letter-spacing: 2px;
+  animation: textShadow infinite 3s;
 }
 
 #banner img {
   pointer-events: none;
+  z-index: -1;
 }
