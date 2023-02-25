@@ -34,11 +34,11 @@ function Postbox() {
   return (
     <div
       className="container-fluid text-center"
-      style={{ marginBottom: "150px", background: "#000" }}
+      style={{ marginBottom: "100px", background: "#000", marginTop: "100px" }}
     >
       <h4 className="d4d4 fs-4 fw-bold my-5 pt-5">{`< Popular Posts />`}🔥</h4>
       <Table
-        className="table table-borderless mb-5 "
+        className="table table-borderless"
         style={{
           borderTop: " #04b616 dashed  1px",
           borderBottom: " #04b616 dashed  1px",

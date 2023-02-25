@@ -7,7 +7,7 @@ function Contact() {
   return (
     <div
       className="container-fluid text-center w-100 contact"
-      style={{ height: "650px", marginTop: "100px" }}
+      style={{ height: "650px" }}
     >
       <h4 className="d4d4 fs-4 fw-bold my-5 pt-5">{`< Contact Us />`}</h4>
       <div className="container" style={{ maxWidth: "600px" }}>

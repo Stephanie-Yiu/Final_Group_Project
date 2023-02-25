@@ -19,13 +19,13 @@ function About() {
 
   function scrolling3() {
     let value = window.scrollY;
-    K.current.style.top = 70 - value * 0.3 + "px";
-    J.current.style.top = 800 - value * 0.3 + "px";
-    S.current.style.top = 1500 - value * 0.3 + "px";
+    K.current.style.top = 70 - value * 0.5 + "px";
+    J.current.style.top = 800 - value * 0.5 + "px";
+    S.current.style.top = 1500 - value * 0.5 + "px";
   }
 
   return (
-    <div className="container-fluid about position-relative">
+    <div className="container-fluid ">
       <h1 className="d4d4 fw-bold text-center about-title mt-5 py-5 display-5 ">
         {"< About Us />"}
       </h1>
