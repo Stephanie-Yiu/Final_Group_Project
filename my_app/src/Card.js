@@ -1,17 +1,19 @@
 import Card from "react-bootstrap/Card";
-import "./Card.css";
 import card01 from "./img/card01.png";
 import card02 from "./img/card02.png";
 import card03 from "./img/card03.png";
 import card04 from "./img/card04.png";
 import card05 from "./img/card05.png";
 import card06 from "./img/card06.png";
+import "./Card.css";
 
 function BasicExample() {
   return (
-    <div class="container my-5 text-center">
-      <div class="row">
-        <div class="col-12 col-md-4 my-3 d-flex justify-content-center">
+    <div className="container my-5 text-center">
+      <h4 className="d4d4 fs-4 fw-bold">{"< Article />"}</h4>
+      <p className="d4d4 my-3 fw-light">Article about Web technology</p>
+      <div className="row">
+        <div className="col-12 col-md-4 my-3 d-flex justify-content-center">
           <Card
             style={{
               width: "100%",
@@ -19,7 +21,7 @@ function BasicExample() {
               border: "#04b616 solid 1px",
             }}
             bg="black"
-            className="rounded-0 mb-4"
+            className="rounded-0 mb-4 h-100"
           >
             <Card.Img variant="top" src={card01} className="rounded-0" />
             <Card.Body>
@@ -37,7 +39,7 @@ function BasicExample() {
           </Card>
         </div>
 
-        <div class="col-12 col-md-4 my-3 d-flex justify-content-center">
+        <div className="col-12 col-md-4 my-3 d-flex justify-content-center">
           <Card
             style={{
               width: "100%",
@@ -45,7 +47,7 @@ function BasicExample() {
               border: "#04b616 solid 1px",
             }}
             bg="black"
-            className="rounded-0 mb-4"
+            className="rounded-0 mb-4 h-100"
           >
             <Card.Img variant="top" src={card02} className="rounded-0" />
             <Card.Body>
@@ -63,7 +65,7 @@ function BasicExample() {
           </Card>
         </div>
 
-        <div class="col-12 col-md-4 my-3 d-flex justify-content-center">
+        <div className="col-12 col-md-4 my-3 d-flex justify-content-center">
           <Card
             style={{
               width: "100%",
@@ -71,7 +73,7 @@ function BasicExample() {
               border: "#04b616 solid 1px",
             }}
             bg="black"
-            className="rounded-0 mb-4"
+            className="rounded-0 mb-4 h-100"
           >
             <Card.Img variant="top" src={card03} className="rounded-0" />
             <Card.Body>
@@ -89,7 +91,7 @@ function BasicExample() {
           </Card>
         </div>
 
-        <div class="col-12 col-md-4 my-3 d-flex justify-content-center">
+        <div className="col-12 col-md-4 my-3 d-flex justify-content-center">
           <Card
             style={{
               width: "100%",
@@ -97,7 +99,7 @@ function BasicExample() {
               border: "#04b616 solid 1px",
             }}
             bg="black"
-            className="rounded-0 mb-4"
+            className="rounded-0 mb-4 h-100"
           >
             <Card.Img variant="top" src={card04} className="rounded-0" />
             <Card.Body>
@@ -115,7 +117,7 @@ function BasicExample() {
           </Card>
         </div>
 
-        <div class="col-12 col-md-4 my-3 d-flex justify-content-center">
+        <div className="col-12 col-md-4 my-3 d-flex justify-content-center">
           <Card
             style={{
               width: "100%",
@@ -123,7 +125,7 @@ function BasicExample() {
               border: "#04b616 solid 1px",
             }}
             bg="black"
-            className="rounded-0 mb-4"
+            className="rounded-0 mb-4 h-100"
           >
             <Card.Img variant="top" src={card05} className="rounded-0" />
             <Card.Body>
@@ -141,7 +143,7 @@ function BasicExample() {
           </Card>
         </div>
 
-        <div class="col-12 col-md-4 my-3 d-flex justify-content-center">
+        <div className="col-12 col-md-4 my-3 d-flex justify-content-center">
           <Card
             style={{
               width: "100%",
@@ -149,7 +151,7 @@ function BasicExample() {
               border: "#04b616 solid 1px",
             }}
             bg="black"
-            className="rounded-0 mb-4"
+            className="rounded-0 mb-5 h-100"
           >
             <Card.Img variant="top" src={card06} className="rounded-0" />
             <Card.Body>

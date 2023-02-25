@@ -1,38 +1,29 @@
-.contactus {
-  text-align: center;
-  vertical-align: center;
-  background-color: black;
-  padding: 5px;
+.contact {
   background-image: url("./img/image_contactus.png");
-  height: 60vh;
+  background-position: cover;
 }
 
-p, h1{
-  color: white;
-  font-weight: bold;
+.msg:focus,
+.email:focus {
+  outline: none;
+  border: #04b616 solid 1px;
+  box-shadow: 0 0 15px #04b616;
 }
 
-.emailtext {
-  color: white;
-  background-color: black;
-  border: #04b616 solid 2px;
-  width: 50%;
-
+.msg,
+.email {
+  outline: none;
+  border: #04b616 solid 1px;
 }
 
-.textArea {
-  width: 50%;
-  color: white;
-  background-color: black;
-  border: #04b616 solid 2px;
-}
-
-.sendbtn {
-  color:  black;
-  font-weight: bold;
+#contactbtn {
   background-color: #04b616;
-  border: 0cm;
-  padding: 8px 20px;
-  margin-bottom: 10px;
+  border: none;
+  border-radius: 3px;
+  color: #000;
+  font-weight: bold;
+}
 
+#contactbtn:hover {
+  background-color: #02da18;
 }
