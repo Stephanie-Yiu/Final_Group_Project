@@ -54,8 +54,8 @@
 }
 
 .gameText {
-  color: #14771b;
-  text-shadow: 2px 2px #09f55485;
+  color: #22ff00;
+  text-shadow: 2px 2px #1820bd, 4px 4px 2px #d0079a85;
   position: absolute;
   top: 50%;
   left: 50%;
