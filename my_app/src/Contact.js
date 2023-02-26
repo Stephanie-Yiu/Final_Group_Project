@@ -32,51 +32,35 @@ function Contact() {
                 value="http://localhost:3000/"
               />
 
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlInput1"
-              >
-                <Form.Label className="green fw-bold" htmlFor="name">
-                  Name{" "}
-                </Form.Label>
+              <Form.Group className="mb-3" controlId="name">
+                <Form.Label className="green fw-bold">Name </Form.Label>
                 <Form.Control
                   type="text"
                   name="name"
-                  id="name"
                   placeholder="Your Name"
                   className="rounded-0 name"
                   style={{ background: "#d4d4d4" }}
                   required
                 />
               </Form.Group>
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlInput1"
-              >
-                <Form.Label className="green fw-bold" htmlFor="email">
+              <Form.Group className="mb-3" controlId="email">
+                <Form.Label className="green fw-bold">
                   Email address{" "}
                 </Form.Label>
                 <Form.Control
                   type="email"
                   name="email"
-                  id="email"
                   placeholder="Email"
                   className="rounded-0 email"
                   style={{ background: "#d4d4d4" }}
                   required
                 />
               </Form.Group>
-              <Form.Group
-                className="mb-3"
-                controlId="exampleForm.ControlTextarea1"
-              >
-                <Form.Label className="green fw-bold" htmlFor="message">
-                  Message{" "}
-                </Form.Label>
+              <Form.Group className="mb-3" controlId="message">
+                <Form.Label className="green fw-bold">Message </Form.Label>
                 <Form.Control
                   as="textarea"
                   name="message"
-                  id="message"
                   placeholder="Hi, Feel Free To Contact Us :D"
                   rows={10}
                   className="rounded-0 msg"

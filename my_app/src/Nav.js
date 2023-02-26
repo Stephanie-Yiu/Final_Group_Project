@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 
 function NavScrollExample() {
   const [scrolling, setScrolling] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
@@ -27,6 +28,7 @@ function NavScrollExample() {
 
   return (
     <Navbar
+      expanded={expanded}
       bg="black"
       expand="lg"
       style={{
@@ -37,21 +39,28 @@ function NavScrollExample() {
       className="p-2"
     >
       <Container fluid className="px-3 px-md-5">
-        <Link to="/" className="text-decoration-none">
+        <Link
+          to="/"
+          className="text-decoration-none"
+          onClick={() => setExpanded(false)}
+        >
           <Navbar.Brand id="logo" className="fs-4 ">
             {"<FEWD/>"}
           </Navbar.Brand>
         </Link>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav">
-          {" "}
-          <MenuIcon style={{ color: "#04b616" }} />{" "}
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          onClick={() => setExpanded(expanded ? false : "expanded")}
+        >
+          <MenuIcon style={{ color: "#04b616" }} />
         </Navbar.Toggle>
         <Navbar.Collapse className="text-center">
           <Nav className="m-auto my-2 my-lg-0 text-center">
             <Link
               to="/"
-              className="text-light mx-5 my-2 my-md-0 text-decoration-none"
+              className="text-light mx-5 my-2 my-md-0 text-decoration-none "
+              onClick={() => setExpanded(false)}
             >
               Home
             </Link>
@@ -61,12 +70,14 @@ function NavScrollExample() {
             <Link
               to="./games"
               className="text-light mx-5 my-2 my-md-0 text-decoration-none"
+              onClick={() => setExpanded(false)}
             >
               Games
             </Link>
             <Link
               to="./about"
               className="text-light mx-5 my-2 my-md-0 text-decoration-none"
+              onClick={() => setExpanded(false)}
             >
               About
             </Link>
@@ -74,6 +85,7 @@ function NavScrollExample() {
           <Link
             to="./login"
             className="text-light mx-5 my-2 my-md-0 text-decoration-none"
+            onClick={() => setExpanded(false)}
           >
             <Button id="login" className="my-3 my-lg-0 fw-bolder">
               LogIn
