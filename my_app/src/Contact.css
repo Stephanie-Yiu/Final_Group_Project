@@ -4,14 +4,16 @@
 }
 
 .msg:focus,
-.email:focus {
+.email:focus,
+.name:focus {
   outline: none;
   border: #04b616 solid 1px;
   box-shadow: 0 0 15px #04b616;
 }
 
 .msg,
-.email {
+.email,
+.name {
   outline: none;
   border: #04b616 solid 1px;
 }
