@@ -33,6 +33,9 @@ function Register() {
             id="form3Example1cg"
             className="form-control form-control-lg"
           />
+          <label className="form-lable" htmlFor="form3Example1cg">
+            Your Name
+          </label>
         </div>
 
         <div className="form-outline mb-4">
@@ -45,11 +48,10 @@ function Register() {
             type="email"
             id="form3Example3cg"
             className="form-control form-control-lg"
-          >
-            <label className="form-lable" htmlFor="form3Example3cg">
-              Your Email
-            </label>
-          </input>
+          />
+          <label className="form-lable" htmlFor="form3Example3cg">
+            Your Email
+          </label>
         </div>
 
         <div className="form-outline mb-4">
@@ -62,11 +64,10 @@ function Register() {
             type="password"
             id="form3Example4cg"
             className="form-control form-control-lg"
-          >
-            <label className="form-lable" htmlFor="form3Example4cg">
-              Your Email
-            </label>
-          </input>
+          />
+          <label className="form-lable" htmlFor="form3Example4cg">
+            Password
+          </label>
         </div>
 
         <div>
