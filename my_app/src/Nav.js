@@ -57,32 +57,39 @@ function NavScrollExample() {
         </Navbar.Toggle>
         <Navbar.Collapse className="text-center">
           <Nav className="m-auto my-2 my-lg-0 text-center">
-            <Link
+            <Nav.Link
+              as={Link}
               to="/"
               className="text-light mx-5 my-2 my-md-0 text-decoration-none "
               onClick={() => setExpanded(false)}
             >
               Home
-            </Link>
-            <Link className="text-light mx-5 my-2 my-md-0 text-decoration-none">
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
+              className="text-light mx-5 my-2 my-md-0 text-decoration-none"
+            >
               Posts
-            </Link>
-            <Link
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
               to="./games"
               className="text-light mx-5 my-2 my-md-0 text-decoration-none"
               onClick={() => setExpanded(false)}
             >
               Games
-            </Link>
-            <Link
+            </Nav.Link>
+            <Nav.Link
+              as={Link}
               to="./about"
               className="text-light mx-5 my-2 my-md-0 text-decoration-none"
               onClick={() => setExpanded(false)}
             >
               About
-            </Link>
+            </Nav.Link>
           </Nav>
-          <Link
+          <Nav.Link
+            as={Link}
             to="./login"
             className="text-light mx-5 my-2 my-md-0 text-decoration-none"
             onClick={() => setExpanded(false)}
@@ -90,7 +97,7 @@ function NavScrollExample() {
             <Button id="login" className="my-3 my-lg-0 fw-bolder">
               LogIn
             </Button>
-          </Link>
+          </Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
