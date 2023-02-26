@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import About from "./About";
 import Games from "./Game";
+
 import NavScrollExample from "./Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -16,6 +17,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
         <Route path="/games" element={<Games />} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
