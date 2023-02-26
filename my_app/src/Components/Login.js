@@ -60,7 +60,7 @@ function Login() {
           <button type="submit">Login</button>
         </div>
 
-        <p>Have already an account?</p>
+        <p>No account?</p>
         <a href="/Register">
           <u>Register here</u>
         </a>
