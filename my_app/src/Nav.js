@@ -62,7 +62,6 @@ function NavScrollExample() {
               to="./games"
               className="text-light mx-5 my-2 my-md-0 text-decoration-none"
             >
-
               Games
             </Link>
             <Link
@@ -72,9 +71,14 @@ function NavScrollExample() {
               About
             </Link>
           </Nav>
-          <Button id="login" className="my-3 my-lg-0 fw-bolder">
-            LogIn
-          </Button>
+          <Link
+            to="./login"
+            className="text-light mx-5 my-2 my-md-0 text-decoration-none"
+          >
+            <Button id="login" className="my-3 my-lg-0 fw-bolder">
+              LogIn
+            </Button>
+          </Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
