@@ -4,8 +4,8 @@ import "./index.css";
 import App from "./App";
 import About from "./About";
 import Games from "./Game";
-import Login from "./Components/Login";
-import Register from "./Components/Register";
+import Login from "./Login";
+import Register from "./Register";
 
 import NavScrollExample from "./Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
