@@ -1,32 +1,32 @@
-import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useState } from "react";
+import { Navigate, Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import "./Login.css";
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
 
   async function handleLogin(ev) {
     ev.preventDefault();
-    const response = await fetch(
-      'http://localhost:4000/login',
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-        headers: {
-          'content-type': 'application/json',
-        },
-        credentials: 'include',
+    const response = await fetch("http://localhost:4000/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+      headers: {
+        "content-type": "application/json",
       },
-    );
+      credentials: "include",
+    });
 
     if (response.ok) {
       setRedirect(true);
     } else {
-      alert('Wrong Email or password');
+      alert("Wrong Email or password");
     }
   }
 
@@ -34,54 +34,50 @@ function Login() {
     return <Navigate to="/" />;
   }
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <div className="form-outline mb-4">
-          <input
-            name="email"
-            value={email}
-            onChange={e =>
-              setEmail(e.target.value)
-            }
-            type="email"
-            id="form3Example3cg"
-            className="form-control form-control-lg"
-          />
-          <label
-            className="form-lable"
-            htmlFor="form3Example3cg">
-            Your Email
-          </label>
-        </div>
+    <div className="container-fluid text-start green logincontainer">
+      <h1 className="d4d4 fw-bold about-title text-center mt-5 py-5 display-5 ">
+        {"< LogIn />"}
+      </h1>
+      <div className="container" style={{ maxWidth: "500px" }}>
+        <Form onSubmit={handleLogin} style={{ maxWidth: "100%" }}>
+          <Form.Group className="mb-3" controlId="email">
+            <Form.Label className="green fw-bold">Your Email </Form.Label>
+            <Form.Control
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              className="rounded-0 name"
+              style={{ background: "#d4d4d4" }}
+            />
+          </Form.Group>
 
-        <div className="form-outline mb-4">
-          <input
-            name="password"
-            value={password}
-            onChange={e =>
-              setPassword(e.target.value)
-            }
-            type="password"
-            id="form3Example4cg"
-            className="form-control form-control-lg"
-          />
-          <label
-            className="form-lable"
-            htmlFor="form3Example4cg">
-            Password
-          </label>
-        </div>
+          <Form.Group className="my-5" controlId="password">
+            <Form.Label className="green fw-bold">Password </Form.Label>
+            <Form.Control
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              className="rounded-0 name"
+              style={{ background: "#d4d4d4" }}
+            />
+          </Form.Group>
 
-        <div>
-          <button type="submit">Login</button>
-        </div>
-
-        <p>No account?</p>
-        <a href="/Register">
-          <u>Register here</u>
-        </a>
-      </form>
+          <Button type="submit" id="contactbtn" className="py-2 px-5">
+            Login
+          </Button>
+          <p className="mt-5 text-center">
+            No account?{" "}
+            <Link
+              to="/Register"
+              className="d4d4 register_link ms-2 fw-bold text-decoration-none"
+            >
+              Register here
+            </Link>
+          </p>
+        </Form>
+      </div>
     </div>
   );
 }
