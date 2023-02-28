@@ -76,27 +76,33 @@ export default function NavBar() {
             <Nav.Link
               as={Link}
               to="/"
-              className="text-light mx-5 my-2 my-md-0 text-decoration-none "
-              onClick={() => setExpanded(false)}>
+              className="text-light mx-5 my-2 my-md-0 text-decoration-none navlink"
+              onClick={() => setExpanded(false)}
+            >
               Home
             </Nav.Link>
             <Nav.Link
               as={Link}
-              className="text-light mx-5 my-2 my-md-0 text-decoration-none">
+              to="/post"
+              className="text-light mx-5 my-2 my-md-0 text-decoration-none navlink"
+              onClick={() => setExpanded(false)}
+            >
               Posts
             </Nav.Link>
             <Nav.Link
               as={Link}
               to="./games"
-              className="text-light mx-5 my-2 my-md-0 text-decoration-none"
-              onClick={() => setExpanded(false)}>
+              className="text-light mx-5 my-2 my-md-0 text-decoration-none navlink"
+              onClick={() => setExpanded(false)}
+            >
               Games
             </Nav.Link>
             <Nav.Link
               as={Link}
               to="./about"
-              className="text-light mx-5 my-2 my-md-0 text-decoration-none"
-              onClick={() => setExpanded(false)}>
+              className="text-light mx-5 my-2 my-md-0 text-decoration-none navlink"
+              onClick={() => setExpanded(false)}
+            >
               About
             </Nav.Link>
           </Nav>
