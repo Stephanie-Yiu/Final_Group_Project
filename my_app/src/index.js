@@ -22,8 +22,8 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
         <Route path="/games" element={<Games />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
         {/* post */}
         <Route path="/post" element={<Post />} />
         <Route path="/create" element={<Create />} />
