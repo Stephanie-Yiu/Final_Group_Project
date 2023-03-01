@@ -1,13 +1,13 @@
-import PostList from "./PostList";
-import useFetch from "./useFetch";
-import Loading from "./Loading";
+import PostList from './PostList';
+import useFetch from './useFetch';
+import Loading from './Loading';
 
 const Home = () => {
   const {
     error,
     isPending,
     data: posts,
-  } = useFetch("http://localhost:8000/posts");
+  } = useFetch('http://localhost:8000/posts');
 
   return (
     <div className="home">

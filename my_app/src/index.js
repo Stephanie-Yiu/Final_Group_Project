@@ -6,7 +6,8 @@ import About from './About';
 import Games from './Game';
 import Login from './Login';
 import Register from './Register';
-import Layout from './Layout';
+
+import CreatePost from './CreatePost';
 
 import NavHeader from './Nav';
 import {
@@ -62,6 +63,10 @@ root.render(
             <Route
               path="/posts/:id"
               element={<PostDetails />}
+            />
+            <Route
+              path="/createpost"
+              element={<CreatePost />}
             />
           </Route>
         </Routes>

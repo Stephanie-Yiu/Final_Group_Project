@@ -10,7 +10,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import { UserContext } from './UserContext';
 
@@ -169,8 +169,7 @@ export default function NavHeader() {
               <>
                 <a
                   onClick={logout}
-                  className="text-light mx-5 my-2 my-md-0 text-decoration-none"
-                  onClick={logout}>
+                  className="text-light mx-5 my-2 my-md-0 text-decoration-none">
                   <Button
                     id="login"
                     className="my-3
@@ -182,7 +181,7 @@ export default function NavHeader() {
 
                 <Nav.Link
                   as={Link}
-                  to="/"
+                  to="/createpost"
                   className="text-light mx-5 my-2 my-md-0 text-decoration-none"
                   onClick={() =>
                     setExpanded(false)
