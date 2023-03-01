@@ -5,6 +5,9 @@ import BasicExample from "./Card";
 import ContactUs from "./Contact";
 import Postbox from "./Postbox";
 
+
+//is the home pages
+
 function App() {
   return (
     <>

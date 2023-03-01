@@ -1,33 +1,36 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import Button from "react-bootstrap/esm/Button";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/esm/Button';
 // import fetch from 'node-fetch'
 // import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
   async function handleSubmitRegister(e) {
     e.preventDefault();
 
-    const response = await fetch("http://localhost:4000/register", {
-      method: "POST",
-      body: JSON.stringify({
-        username,
-        password,
-        email,
-      }),
-      headers: {
-        "Content-Type": "application/json",
+    const response = await fetch(
+      'http://localhost:4000/register',
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          username,
+          password,
+          email,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
       },
-    });
+    );
     console.log(response);
     if (response.status === 200) {
-      alert("registeration  successful");
+      alert('registeration  successful');
     } else {
-      alert("registeration failed");
+      alert('registeration failed');
     }
   }
 
@@ -42,12 +45,16 @@ export default function Register() {
           <input
             name="name"
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={e =>
+              setUsername(e.target.value)
+            }
             type="text"
             id="form3Example1cg"
             className="form-control form-control-lg"
           />
-          <label className="form-lable fw-bold" htmlFor="form3Example1cg">
+          <label
+            className="form-lable fw-bold"
+            htmlFor="form3Example1cg">
             Your Name
           </label>
         </div>
@@ -56,12 +63,16 @@ export default function Register() {
           <input
             name="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={e =>
+              setEmail(e.target.value)
+            }
             type="email"
             id="form3Example3cg"
             className="form-control form-control-lg"
           />
-          <label className="form-lable fw-bold" htmlFor="form3Example3cg">
+          <label
+            className="form-lable fw-bold"
+            htmlFor="form3Example3cg">
             Your Email
           </label>
         </div>
@@ -70,18 +81,26 @@ export default function Register() {
           <input
             name="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={e =>
+              setPassword(e.target.value)
+            }
             type="password"
             id="form3Example4cg"
             className="form-control form-control-lg"
           />
-          <label className="form-lable fw-bold" htmlFor="form3Example4cg">
+          <label
+            className="form-lable fw-bold"
+            htmlFor="form3Example4cg">
             Password
           </label>
         </div>
 
         <div>
-          <Button className="bg-dark green fw-bold p-1 border border-info rounded">
+          <Button
+            className="
+          bg-dark green fw-bold
+           p-1 border border-info rounded"
+            type="submit">
             Register
           </Button>
         </div>
@@ -90,8 +109,7 @@ export default function Register() {
           <p>Have already an account?</p>
           <Link
             to="/Login"
-            className="d4d4 register_link ms-2 fw-bold text-decoration-none"
-          >
+            className="d4d4 register_link ms-2 fw-bold text-decoration-none">
             Login here
           </Link>
         </div>
