@@ -52,7 +52,7 @@ export default function CreatePost() {
 
     e.preventDefault();
     console.log(files);
-    
+
     // fetch(
     //   'http://localhost:4000/creat',
     //   {

@@ -7,7 +7,7 @@ import Games from './Game';
 import Login from './Login';
 import Register from './Register';
 
-import CreatePost from './CreatePost';
+import CreatePost from './Components/CreatePost';
 
 import NavHeader from './Nav';
 import {

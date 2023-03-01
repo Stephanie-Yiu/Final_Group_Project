@@ -4,6 +4,10 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const User = require('./models/User');
 const jwt = require('jsonwebtoken');
+const multer = require('multer');
+const uploadMidllesWare = multer({
+  dest: 'uploads/',
+});
 
 const cookieParser = require('cookie-parser');
 
@@ -82,6 +86,14 @@ app.get('/proflie', (req, res) => {
 app.post('/logout', (req, res) => {
   res.cookie('token', '').json('ok');
 });
+
+app.post(
+  '/creatpost',
+  uploadMidllesWare.single('file'),
+  (req, res) => {
+    res.json(req.files);
+  },
+);
 
 app.listen(4000);
 

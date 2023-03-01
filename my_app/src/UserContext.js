@@ -8,7 +8,8 @@ export function UserContextProvider({
   const [userInfo, setUserInfo] = useState({});
 
   return (
-    <UserContext.Provider value={{userInfo,setUserInfo}}>
+    <UserContext.Provider
+      value={{ userInfo, setUserInfo }}>
       {children}
     </UserContext.Provider>
   );
