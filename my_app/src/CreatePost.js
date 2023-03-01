@@ -42,24 +42,25 @@ export default function CreatePost() {
   const [summary, setSummary] = useState('');
   const [content, setContent] = useState('');
   const [files, setFiles] = useState('');
+  /////////////////////////////////////////
 
-  function createNewPost(e) {
+  async function createNewPost(e) {
     const data = new FormData();
     data.set('title', title);
     data.set('summary', summary);
     data.set('content', content);
-    // data.set('file');
+    data.set('file', files[0]);
 
     e.preventDefault();
-    console.log(files);
 
-    // fetch(
-    //   'http://localhost:4000/creat',
-    //   {
-    //     method: 'POST',
-
-    //   }
-    // )
+    const response = await fetch(
+      'http://localhost:4000/createpost',
+      {
+        method: 'POST',
+        body: data,
+      },
+    );
+    console.log(await response.json());
   }
 
   return (
@@ -114,11 +115,14 @@ export default function CreatePost() {
                 <Form.Label className="green fw-bold">
                   Default file :
                 </Form.Label>
-                <Form.Control
+                <input
                   type="file"
                   onChange={e =>
-                    setFiles(e.target.v)
+                    setFiles(e.target.value)
                   }
+                  style={{
+                    background: '#d4d4d4',
+                  }}
                 />
               </Form.Group>
 
