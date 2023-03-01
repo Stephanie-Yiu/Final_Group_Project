@@ -76,7 +76,7 @@ export default function Register() {
           </Form.Group>
 
           <Button type="submit" id="contactbtn" className="py-2 px-5">
-            Login
+            Register
           </Button>
           <p className="mt-5 text-center">
             Have already an account?
