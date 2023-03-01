@@ -1,25 +1,28 @@
 import PostList from './PostList';
 import useFetch from './useFetch';
 import Loading from './Loading';
+import { Route } from 'react-router-dom';
 
 const Home = () => {
-  const {
-    error,
-    isPending,
-    data: posts,
-  } = useFetch('http://localhost:8000/posts');
+  // const {
+  //   error,
+  //   isPending,
+  //   data: posts,
+  // } = useFetch('http://localhost:8000/posts');
 
   return (
     <div className="home">
-      {error && <div>{error}</div>}
-      {isPending && (
-        <div>
-          <Loading />
-        </div>
-      )}
-      {posts && <PostList posts={posts} />}
+      <Route>
+        <PostList />
+      </Route>
     </div>
   );
 };
 
 export default Home;
+
+/* {error && <div>{error}</div>}
+      {isPending && (
+        <div>
+          <Loading />
+        </div>*/

@@ -6,6 +6,7 @@ import About from './About';
 import Games from './Game';
 import Login from './Login';
 import Register from './Register';
+import PostList from './Post/src/PostList';
 
 import CreatePost from './CreatePost';
 
@@ -54,7 +55,7 @@ root.render(
             {/* post */}
             <Route
               path="/post"
-              element={<Post />}
+              element={<PostList />}
             />
             <Route
               path="/create"

@@ -5,9 +5,9 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 const jwt = require('jsonwebtoken');
 const multer = require('multer');
-const uploads = multer({
-  dest: 'uploads/',
-});
+// const uploadMiddle = multer({
+//   dest: 'uploads/',
+// });
 
 //////////////////////////
 // let fs = require('fs-extra');
@@ -105,13 +105,13 @@ app.post('/logout', (req, res) => {
   res.cookie('token', '').json('ok');
 });
 
-app.post(
-  '/createpost',
-  uploads.single('file'),
-  (req, res) => {
-    res.json({ files: req.file });
-  },
-);
+// app.post(
+//   '/createpost',
+//   uploadMiddle.single('file'),
+//   (req, res) => {
+//     res.json({ files: req.file });
+//   },
+// );
 
 app.listen(4000);
 
