@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Navigate, Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Login.css';
+import { UserContext } from './UserContext';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [redirect, setRedirect] = useState(false);
+  const { setUserInfo } = useContext(UserContext);
 
   async function handleLogin(ev) {
     ev.preventDefault();
@@ -26,7 +28,10 @@ function Login() {
       },
     );
     if (response.ok) {
-      setRedirect(true);
+      response.json().then(userInfo => {
+        setUserInfo(userInfo);
+        setRedirect(true);
+      });
     } else {
       alert('wrong credentials');
     }

@@ -167,22 +167,18 @@ export default function NavHeader() {
 
             {username && (
               <>
-                <Nav.Link
-                  as={Link}
-                  to="/logout"
+                <a
+                  onClick={logout}
                   className="text-light mx-5 my-2 my-md-0 text-decoration-none"
-                  onClick={() =>
-                    setExpanded(false)
-                  }>
+                  onClick={logout}>
                   <Button
-                    onClick={logout}
                     id="login"
                     className="my-3
                   my-lg-0 fw-bolder">
                     {' '}
                     LogOut
                   </Button>
-                </Nav.Link>
+                </a>
 
                 <Nav.Link
                   as={Link}
