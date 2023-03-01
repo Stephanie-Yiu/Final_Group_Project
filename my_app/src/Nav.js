@@ -1,5 +1,6 @@
 import './Nav.css';
 import React, {
+  useContext,
   useState,
   useEffect,
 } from 'react';
@@ -11,6 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+import { UserContext } from './UserContext';
 
 export default function NavHeader() {
   //nav bar scrolling}
