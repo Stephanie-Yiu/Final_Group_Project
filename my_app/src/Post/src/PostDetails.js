@@ -83,7 +83,16 @@ const PostDetails = () => {
               }}
             >
               <div
-                className="col-12 py-2 pb-0 text-start commentbody"
+                className="col-3 d-none d-md-block"
+                style={{
+                  borderRight: "#04b616 solid 2px",
+                  color: "#04b616",
+                }}
+              >
+                <img alt="icon here" />
+              </div>
+              <div
+                className="col-12 col-md-9 py-2 pb-0 text-start commentbody"
                 style={{
                   background: "#d4d4d4",
                   color: "#000",

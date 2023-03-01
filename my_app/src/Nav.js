@@ -80,6 +80,9 @@ export default function NavHeader() {
               >
                 <Navbar.Brand id="logo" className="fs-4 ">
                   {"<FEWD/>"}
+                  <span style={{ fontSize: "16px" }} className="ps-1">
+                    {username}
+                  </span>
                 </Navbar.Brand>
               </Link>
             </>
@@ -107,7 +110,7 @@ export default function NavHeader() {
               <Nav.Link
                 as={Link}
                 to="/"
-                className="text-light mx-5 my-2 my-md-0 text-decoration-none navlink"
+                className="text-light mx-4 my-2 my-md-0 text-decoration-none navlink"
                 onClick={() => setExpanded(false)}
               >
                 Home
@@ -115,7 +118,7 @@ export default function NavHeader() {
               <Nav.Link
                 as={Link}
                 to="/post"
-                className="text-light mx-5 my-2 my-md-0 text-decoration-none navlink"
+                className="text-light mx-4 my-2 my-md-0 text-decoration-none navlink"
                 onClick={() => setExpanded(false)}
               >
                 Posts
@@ -123,7 +126,7 @@ export default function NavHeader() {
               <Nav.Link
                 as={Link}
                 to="./games"
-                className="text-light mx-5 my-2 my-md-0 text-decoration-none navlink"
+                className="text-light mx-4 my-2 my-md-0 text-decoration-none navlink"
                 onClick={() => setExpanded(false)}
               >
                 Games
@@ -131,7 +134,7 @@ export default function NavHeader() {
               <Nav.Link
                 as={Link}
                 to="./about"
-                className="text-light mx-5 my-2 my-md-0 text-decoration-none navlink"
+                className="text-light mx-4 my-2 my-md-0 text-decoration-none navlink"
                 onClick={() => setExpanded(false)}
               >
                 About
@@ -151,21 +154,9 @@ export default function NavHeader() {
                     className="my-3
                   my-lg-0 fw-bolder"
                   >
-                    {" "}
                     LogOut
                   </Button>
                 </Nav.Link>
-
-                {/*                <Nav.Link
-                  as={Link}
-                  to="/createpost"
-                  className="text-light mx-1 my-2 my-md-0 text-decoration-none"
-                  onClick={() => setExpanded(false)}
-                >
-                  <Button id="login" className="my-1 my-lg-0 fw-bolder">
-                    Create Post
-                  </Button>
-            </Nav.Link>*/}
               </>
             )}
             {!username && (

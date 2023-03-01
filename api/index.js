@@ -5,10 +5,28 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 const jwt = require('jsonwebtoken');
 const multer = require('multer');
-const uploadMidllesWare = multer({
+const uploads = multer({
   dest: 'uploads/',
 });
 
+//////////////////////////
+// let fs = require('fs-extra');
+
+// let upload = multer({
+//   storage: multer.diskStorage({
+//     destination: (req, file, callback) => {
+//       let type = req.params.type;
+//       let path = `./uploads/${type}`;
+//       fs.mkdirsSync(path);
+//       callback(null, path);
+//     },
+//     filename: (req, file, callback) => {
+//       //originalname is the uploaded file's name with extn
+//       callback(null, file.originalname);
+//     }
+//   })
+// });
+////////////////////////////////////////
 const cookieParser = require('cookie-parser');
 
 const bcrypt = require('bcryptjs'); //for hashing password
@@ -88,10 +106,10 @@ app.post('/logout', (req, res) => {
 });
 
 app.post(
-  '/creatpost',
-  uploadMidllesWare.single('file'),
+  '/createpost',
+  uploads.single('file'),
   (req, res) => {
-    res.json(req.files);
+    res.json({ files: req.file });
   },
 );
 
