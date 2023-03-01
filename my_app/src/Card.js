@@ -7,7 +7,7 @@ import card05 from "./img/card05.png";
 import card06 from "./img/card06.png";
 import "./Card.css";
 
-function BasicExample() {
+function Cards() {
   return (
     <div className="container my-5 text-center">
       <h4 className="d4d4 fs-4 fw-bold">{"< Article />"}</h4>
@@ -23,8 +23,19 @@ function BasicExample() {
             bg="black"
             className="rounded-0 mb-4 h-100"
           >
-            <Card.Img variant="top" src={card01} className="rounded-0" />
-            <Card.Body>
+            <div className="card-img-container">
+              <Card.Img
+                variant="top"
+                src={card01}
+                className="rounded-0 card-image"
+                style={{
+                  maxHeight: "150px",
+                  objectFit: "cover",
+                  transition: "all 0.2s",
+                }}
+              />
+            </div>
+            <Card.Body style={{ borderTop: "#04b616 solid 3px" }}>
               <Card.Title className="green fw-bold fs-4 my-4">
                 AI and Machine Learning
               </Card.Title>
@@ -49,8 +60,19 @@ function BasicExample() {
             bg="black"
             className="rounded-0 mb-4 h-100"
           >
-            <Card.Img variant="top" src={card02} className="rounded-0" />
-            <Card.Body>
+            <div className="card-img-container">
+              <Card.Img
+                variant="top"
+                src={card02}
+                className="rounded-0 card-image"
+                style={{
+                  maxHeight: "150px",
+                  objectFit: "cover",
+                  transition: "all 0.2s",
+                }}
+              />
+            </div>
+            <Card.Body style={{ borderTop: "#04b616 solid 3px" }}>
               <Card.Title className="green fw-bold fs-4 my-4">
                 Types of Coding Languages Guide
               </Card.Title>
@@ -75,8 +97,19 @@ function BasicExample() {
             bg="black"
             className="rounded-0 mb-4 h-100"
           >
-            <Card.Img variant="top" src={card03} className="rounded-0" />
-            <Card.Body>
+            <div className="card-img-container">
+              <Card.Img
+                variant="top"
+                src={card03}
+                className="rounded-0 card-image"
+                style={{
+                  maxHeight: "150px",
+                  objectFit: "cover",
+                  transition: "all 0.2s",
+                }}
+              />
+            </div>
+            <Card.Body style={{ borderTop: "#04b616 solid 3px" }}>
               <Card.Title className="green fw-bold fs-4 my-4">
                 Best Coding Games for Kids
               </Card.Title>
@@ -101,8 +134,19 @@ function BasicExample() {
             bg="black"
             className="rounded-0 mb-4 h-100"
           >
-            <Card.Img variant="top" src={card04} className="rounded-0" />
-            <Card.Body>
+            <div className="card-img-container">
+              <Card.Img
+                variant="top"
+                src={card04}
+                className="rounded-0 card-image"
+                style={{
+                  maxHeight: "150px",
+                  objectFit: "cover",
+                  transition: "all 0.2s",
+                }}
+              />
+            </div>
+            <Card.Body style={{ borderTop: "#04b616 solid 3px" }}>
               <Card.Title className="green fw-bold fs-4 my-4">
                 25 Best Coding Apps for Kids
               </Card.Title>
@@ -127,8 +171,19 @@ function BasicExample() {
             bg="black"
             className="rounded-0 mb-4 h-100"
           >
-            <Card.Img variant="top" src={card05} className="rounded-0" />
-            <Card.Body>
+            <div className="card-img-container">
+              <Card.Img
+                variant="top"
+                src={card05}
+                className="rounded-0 card-image"
+                style={{
+                  maxHeight: "150px",
+                  objectFit: "cover",
+                  transition: "all 0.2s",
+                }}
+              />
+            </div>
+            <Card.Body style={{ borderTop: "#04b616 solid 3px" }}>
               <Card.Title className="green fw-bold fs-4 my-4">
                 Android Apps by Coding on Google Play
               </Card.Title>
@@ -153,8 +208,19 @@ function BasicExample() {
             bg="black"
             className="rounded-0 mb-5 h-100"
           >
-            <Card.Img variant="top" src={card06} className="rounded-0" />
-            <Card.Body>
+            <div className="card-img-container">
+              <Card.Img
+                variant="top"
+                src={card06}
+                className="rounded-0 card-image"
+                style={{
+                  maxHeight: "150px",
+                  objectFit: "cover",
+                  transition: "all 0.2s",
+                }}
+              />
+            </div>
+            <Card.Body style={{ borderTop: "#04b616 solid 3px" }}>
               <Card.Title className="green fw-bold fs-4 my-4">
                 Coding for Journalists
               </Card.Title>
@@ -173,4 +239,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default Cards;

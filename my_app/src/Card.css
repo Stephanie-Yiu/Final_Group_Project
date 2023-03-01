@@ -9,3 +9,12 @@
   );
   backdrop-filter: saturate(180%) blur(10px);
 }
+
+.card-image:hover {
+  transform: scale(1.2);
+}
+
+.card-img-container {
+  overflow: hidden;
+  filter: brightness(80%);
+}
