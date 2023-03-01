@@ -16,7 +16,7 @@ const PostList = ({ posts }) => {
       <div className="row mb-3">
         <div className="col-12">
           <Link
-            to="/create"
+            to="/createpost"
             className="d4d4 text-decoration-none creatpost-link"
           >
             Create Post
