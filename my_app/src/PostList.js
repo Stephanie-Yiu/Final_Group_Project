@@ -11,12 +11,12 @@ export default function PostList() {
       'http://localhost:4000/createpost',
     ).then(response =>
       response.json().then(posts => {
-        // console.log(posts);
+        console.log(posts);
 
         setPosts(posts);
       }),
     );
-  }); // will updated everytime there is a new post and
+  }, []); // will updated everytime there is a new post and
   //will gather All the post data
 
   return (
@@ -57,16 +57,6 @@ export default function PostList() {
             ))}
         </tbody>
         {/*laptop Computer Resposive design*/}
-        <tbody
-          className="
-        d-block d-md-none
-         text-center d-flex 
-         flex-column 
-         justify-content-center container
-          my-2 posttbody">
-          Table 2
-        </tbody>
-        {/*mobile deivce Computer Resposive design*/}
       </Table>
     </div>
   );
