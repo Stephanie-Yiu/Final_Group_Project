@@ -16,9 +16,7 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import Post from './Post/src/Post';
-import Create from './Post/src/Create';
-import PostDetails from './Post/src/PostDetails';
+
 import { UserContextProvider } from './UserContext';
 
 const root = ReactDOM.createRoot(
@@ -57,14 +55,7 @@ root.render(
               path="/post"
               element={<PostList />}
             />
-            <Route
-              path="/create"
-              element={<Create />}
-            />
-            <Route
-              path="/posts/:id"
-              element={<PostDetails />}
-            />
+
             <Route
               path="/createpost"
               element={<CreatePost />}
@@ -75,3 +66,12 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>,
 );
+
+// {/* <Route
+//             path="/create"
+//             element={<Create />}
+//           /> */}
+//           {/* <Route
+//             path="/posts/:id"
+//             element={<PostDetails />}
+//           /> */}
