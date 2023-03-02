@@ -3,30 +3,16 @@ const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
 const User = require('./models/User');
+const Post = require('./models/Post');
 const jwt = require('jsonwebtoken');
+
 const multer = require('multer');
-// const uploadMiddle = multer({
-//   dest: 'uploads/',
-// });
 
-//////////////////////////
-// let fs = require('fs-extra');
+const uploadMiddleware = multer({
+  dest: 'uploads/',
+});
+const fs = require('fs');
 
-// let upload = multer({
-//   storage: multer.diskStorage({
-//     destination: (req, file, callback) => {
-//       let type = req.params.type;
-//       let path = `./uploads/${type}`;
-//       fs.mkdirsSync(path);
-//       callback(null, path);
-//     },
-//     filename: (req, file, callback) => {
-//       //originalname is the uploaded file's name with extn
-//       callback(null, file.originalname);
-//     }
-//   })
-// });
-////////////////////////////////////////
 const cookieParser = require('cookie-parser');
 
 const bcrypt = require('bcryptjs'); //for hashing password
@@ -105,13 +91,34 @@ app.post('/logout', (req, res) => {
   res.cookie('token', '').json('ok');
 });
 
-// app.post(
-//   '/createpost',
-//   uploadMiddle.single('file'),
-//   (req, res) => {
-//     res.json({ files: req.file });
-//   },
-// );
+app.post(
+  '/createpost',
+  uploadMiddleware.single('file'),
+  async (req, res) => {
+    const { originalname, path } = req.file;
+    const parts = originalname.split('.');
+    const ext = parts[parts.length - 1];
+    const newPath = path + '.' + ext;
+
+    fs.renameSync(path, newPath);
+
+    const { tile, summary, content } = req.body;
+    const postDoc = await Post.create({
+      tile,
+      summary,
+      content,
+      cover: newPath,
+    });
+    res.json(postDoc);
+  },
+);/// collect the data from the create post form 
+
+
+app.get('/createpost', async (req,res) => {
+  const posts = await Post.find()
+  res.json(posts)
+})
+
 
 app.listen(4000);
 

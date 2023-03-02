@@ -1,4 +1,4 @@
-import Home from "./Home";
+// import Home from "./Home";
 import "./Post.css";
 import { Route } from "react-router-dom";
 
@@ -7,7 +7,7 @@ const Postpage = () => {
     <div className="Postpage">
       <div className="content">
         <Route>
-        <Home />
+        {/* <Home /> */}
         </Route>
       </div>
     </div>

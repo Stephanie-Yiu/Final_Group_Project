@@ -6,7 +6,7 @@ import About from './About';
 import Games from './Game';
 import Login from './Login';
 import Register from './Register';
-import PostList from './Post/src/PostList';
+import PostList from './PostList';
 
 import CreatePost from './CreatePost';
 
