@@ -52,8 +52,8 @@ export default function PostList() {
        justify-content-center container
         my-1 posttbody">
           {posts.length > 0 &&
-            posts.map(posts => (
-              <Post /> // Post Component form PostMinLayout.js   {....post}
+            posts.map(post => (
+              <Post  {...post}/> // Post Component form PostMinLayout.js   {....post}
             ))}
         </tbody>
         {/*laptop Computer Resposive design*/}

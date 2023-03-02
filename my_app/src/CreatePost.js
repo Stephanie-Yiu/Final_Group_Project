@@ -93,7 +93,7 @@ export default function CreatePost() {
                   }}
                   value={title}
                   onChange={e =>
-                    setTitle(e.target.title)
+                    setTitle(e.target.value)
                   }
                 />
               </Form.Group>

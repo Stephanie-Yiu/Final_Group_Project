@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
-import { useEffect, useState } from 'react';
 
 export default function Post({
+  _id,
   title,
   summary,
   cover,
   content,
+  createdAt,
+  author,
 }) {
   return (
     <>
@@ -42,7 +44,7 @@ export default function Post({
               <td className="text-start col-md-8 px-3 px-sm-5 smallborder">
                 <Link className="text-decoration-none">
                   <p className="green fs-5 m-0 title d-inline-block">
-                    post.Title
+                    {title}
                   </p>
                 </Link>
                 <p className="fw-light d4d4 m-0">
@@ -51,11 +53,11 @@ export default function Post({
               </td>
               <td className="col-2 p-md-3 text-start d-none d-md-block">
                 <p className="fw-light d4d4 m-0">
-                  Comments:
+                  {summary}
                 </p>
-                <p className="fw-light d4d4">
-                  post.currentDate
-                </p>
+                <time className="fw-light d4d4">
+                  {createdAt}
+                </time>
               </td>
               comment Box
             </tr>
