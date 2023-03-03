@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const { Schema, model } = mongoose;
 
@@ -8,12 +8,13 @@ const PostSchema = new Schema(
     summary: String,
     content: String,
     cover: String,
+    author: { type: Schema.Types.ObjectId, ref: "User" },
   },
   {
     timestamps: true,
-  },
+  }
 );
 
-const PostModel = model('Posts', PostSchema);
+const PostModel = model("Posts", PostSchema);
 
 module.exports = PostModel;
