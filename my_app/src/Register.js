@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Form from "react-bootstrap/Form";
-import { Navigate } from "react-router-dom";
 // import fetch from 'node-fetch'
 // import { useNavigate } from 'react-router-dom';
 
@@ -11,6 +10,7 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [registered, setRegistered] = useState(false);
+  const [registerError, setRegisterError] = useState(false);
 
   async function handleSubmitRegister(e) {
     e.preventDefault();
@@ -31,7 +31,7 @@ export default function Register() {
       alert("registeration  successful");
       setRegistered(true);
     } else {
-      alert("registeration failed");
+      setRegisterError(true);
     }
   }
 
@@ -51,10 +51,16 @@ export default function Register() {
             <Form.Control
               name="name"
               value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e) =>
+                setUsername(e.target.value) + setRegisterError(false)
+              }
               type="text"
+              minLength={6}
               className="rounded-0 name"
               style={{ background: "#d4d4d4" }}
+              pattern=".{6,}"
+              title="username must be at least 6 characters"
+              required
             />
           </Form.Group>
 
@@ -63,10 +69,13 @@ export default function Register() {
             <Form.Control
               name="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) =>
+                setEmail(e.target.value) + setRegisterError(false)
+              }
               type="email"
               className="rounded-0 name"
               style={{ background: "#d4d4d4" }}
+              required
             />
           </Form.Group>
 
@@ -77,11 +86,17 @@ export default function Register() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
+              minLength={6}
               className="rounded-0 name"
               style={{ background: "#d4d4d4" }}
+              pattern=".{6,}"
+              title="password must be at least 6 characters"
+              required
             />
           </Form.Group>
-
+          {registerError && (
+            <p className="text-warning">Username or Email is already exists.</p>
+          )}
           <Button type="submit" id="contactbtn" className="py-2 px-5">
             Register
           </Button>
