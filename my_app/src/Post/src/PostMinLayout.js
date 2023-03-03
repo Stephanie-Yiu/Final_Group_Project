@@ -42,7 +42,7 @@ export default function Post({
                 {title}
               </p>
             </Link>
-            <p className="fw-light d4d4 m-0">- Joanna</p>
+            <p className="fw-light d4d4 m-0">- by ...</p>
           </td>
           <td
             className="col-2 p-md-3 text-start 

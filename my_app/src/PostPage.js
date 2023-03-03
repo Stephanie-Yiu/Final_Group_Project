@@ -22,7 +22,7 @@ export default function PostPage() {
       <time className="text-light">
         {formatISO9075(new Date(postInfo.createdAt))}
       </time>
-      <div className="text-light">by {postInfo.author.username}</div>
+      {/* <div className="text-light">by {postInfo.author.username}</div> */}
       <div className="image">
         <img src={`http://localhost:/4000/${postInfo.cover}`} alt="" />
       </div>
