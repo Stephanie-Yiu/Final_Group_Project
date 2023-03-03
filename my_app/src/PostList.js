@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import { useEffect, useState } from 'react';
 import Post from './Post/src/PostMinLayout';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function PostList() {
   const [posts, setPosts] = useState([]);
@@ -40,24 +41,28 @@ export default function PostList() {
         </div>
       </div>
       {/*Div with Create Post Button Nmae*/}
+
+
+
       <Table
-        className="table table-borderless"
-        style={{
-          borderTop: ' #04b616 dashed  1px',
-          borderBottom: ' #04b616 dashed  1px',
-        }}>
-        <tbody
-          className="d-none d-md-block 
-      text-center d-flex flex-column
-       justify-content-center container
-        my-1 posttbody">
-          {posts.length > 0 &&
-            posts.map(post => (
-              <Post  {...post}/> // Post Component form PostMinLayout.js   {....post}
-            ))}
-        </tbody>
-        {/*laptop Computer Resposive design*/}
-      </Table>
+          className="table table-borderless"
+          style={{
+            borderTop: ' #04b616 dashed  1px',
+            borderBottom: ' #04b616 dashed  1px',
+          }}>
+          <tbody
+            className=" text-center
+         d-flex flex-column
+          justify-content-center container my-5">
+  
+        {posts.length > 0 &&
+          posts.map(post => (
+            <Post {...post} /> // Post Component form PostMinLayout.js   {....post}
+          ))}
+          
+     
+      </tbody>
+        </Table>
     </div>
   );
 }

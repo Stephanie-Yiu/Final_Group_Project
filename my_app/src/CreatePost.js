@@ -95,6 +95,7 @@ export default function CreatePost() {
                   onChange={e =>
                     setTitle(e.target.value)
                   }
+                  maxLength="200"
                 />
               </Form.Group>
               <Form.Group
@@ -113,6 +114,7 @@ export default function CreatePost() {
                   onChange={e =>
                     setSummary(e.target.value)
                   }
+                  maxLength="500"
                 />
               </Form.Group>
               {/*    //////////////////////////////////////
