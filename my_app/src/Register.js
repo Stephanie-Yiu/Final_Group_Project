@@ -46,8 +46,11 @@ export default function Register() {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               type="text"
+              minLength={6}
               className="rounded-0 name"
               style={{ background: "#d4d4d4" }}
+              pattern=".{6,}"
+              title="username must be at least 6 characters"
             />
           </Form.Group>
 
@@ -70,8 +73,11 @@ export default function Register() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
+              minLength={6}
               className="rounded-0 name"
               style={{ background: "#d4d4d4" }}
+              pattern=".{6,}"
+              title="password must be at least 6 characters"
             />
           </Form.Group>
 
