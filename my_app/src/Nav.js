@@ -93,7 +93,7 @@ export default function NavHeader() {
               className="text-decoration-none"
               onClick={() => setExpanded(false)}
             >
-              <Navbar.Brand id="logo" className="fs-4">
+              <Navbar.Brand id="logo" className="fs-4 ">
                 {"<FEWD/>"}
               </Navbar.Brand>
             </Link>

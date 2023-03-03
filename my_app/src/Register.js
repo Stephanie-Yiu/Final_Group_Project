@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Form from "react-bootstrap/Form";
-
 // import fetch from 'node-fetch'
 // import { useNavigate } from 'react-router-dom';
 
@@ -10,7 +9,6 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [acerror, setAcerror] = useState(false);
 
   async function handleSubmitRegister(e) {
     e.preventDefault();
@@ -26,15 +24,11 @@ export default function Register() {
         "Content-Type": "application/json",
       },
     });
-
     console.log(response);
     if (response.status === 200) {
       alert("registeration  successful");
-    }
-    if (response.status !== 200) {
-      if ((username.length = 0)) {
-        setAcerror(true);
-      }
+    } else {
+      alert("registeration failed");
     }
   }
 
@@ -50,13 +44,13 @@ export default function Register() {
             <Form.Control
               name="name"
               value={username}
-              minlength="6"
               onChange={(e) => setUsername(e.target.value)}
               type="text"
+              minLength={6}
               className="rounded-0 name"
+              style={{ background: "#d4d4d4" }}
               pattern=".{6,}"
               title="username must be at least 6 characters"
-              style={{ background: "#d4d4d4" }}
             />
           </Form.Group>
 
@@ -79,18 +73,17 @@ export default function Register() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type="password"
-              minlength="6"
-              pattern=".{6,}"
-              title="password must be at least 6 characters"
+              minLength={6}
               className="rounded-0 name"
               style={{ background: "#d4d4d4" }}
+              pattern=".{6,}"
+              title="password must be at least 6 characters"
             />
           </Form.Group>
 
           <Button type="submit" id="contactbtn" className="py-2 px-5">
             Register
           </Button>
-          {acerror && <span>Email or Username already exists</span>}
           <p className="mt-5 text-center">
             Have already an account?
             <Link
