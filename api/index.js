@@ -102,23 +102,21 @@ app.post(
 
     fs.renameSync(path, newPath);
 
-    const { tile, summary, content } = req.body;
+    const { title, summary, content } = req.body;
     const postDoc = await Post.create({
-      tile,
+      title,
       summary,
       content,
       cover: newPath,
     });
     res.json(postDoc);
   },
-);/// collect the data from the create post form 
+); /// collect the data from the create post form
 
-
-app.get('/createpost', async (req,res) => {
-  const posts = await Post.find()
-  res.json(posts)
-})
-
+app.get('/createpost', async (req, res) => {
+  const posts = await Post.find();
+  res.json(posts);
+});
 
 app.listen(4000);
 
