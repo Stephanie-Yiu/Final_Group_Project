@@ -93,7 +93,7 @@ export default function NavHeader() {
               className="text-decoration-none"
               onClick={() => setExpanded(false)}
             >
-              <Navbar.Brand id="logo" className="fs-4 ">
+              <Navbar.Brand id="logo" className="fs-4">
                 {"<FEWD/>"}
               </Navbar.Brand>
             </Link>
@@ -110,7 +110,7 @@ export default function NavHeader() {
               <Nav.Link
                 as={Link}
                 to="/"
-                className="text-light ms-5 mx-4 my-2 my-md-0 text-decoration-none navlink"
+                className="text-light mx-4 my-2 my-md-0 text-decoration-none navlink"
                 onClick={() => setExpanded(false)}
               >
                 Home
