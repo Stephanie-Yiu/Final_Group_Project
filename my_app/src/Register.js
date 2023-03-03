@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Form from "react-bootstrap/Form";
+import { Navigate } from "react-router-dom";
 // import fetch from 'node-fetch'
 // import { useNavigate } from 'react-router-dom';
 
@@ -9,6 +10,7 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [registered, setRegistered] = useState(false);
 
   async function handleSubmitRegister(e) {
     e.preventDefault();
@@ -27,9 +29,14 @@ export default function Register() {
     console.log(response);
     if (response.status === 200) {
       alert("registeration  successful");
+      setRegistered(true);
     } else {
       alert("registeration failed");
     }
+  }
+
+  if (registered) {
+    return <Navigate to={"/login"} />;
   }
 
   return (
