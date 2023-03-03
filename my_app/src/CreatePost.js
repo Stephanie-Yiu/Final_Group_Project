@@ -77,7 +77,14 @@ export default function CreatePost() {
                     background: "#d4d4d4",
                   }}
                   value={title}
+<<<<<<< HEAD
                   onChange={(e) => setTitle(e.target.value)}
+=======
+                  onChange={e =>
+                    setTitle(e.target.value)
+                  }
+                  maxLength="200"
+>>>>>>> 5d67041bc701b13f6f0bba5ec778e962d1d05665
                 />
               </Form.Group>
               <Form.Group className="mb-3 text-start" controlId="title">
@@ -89,7 +96,14 @@ export default function CreatePost() {
                     background: "#d4d4d4",
                   }}
                   value={summary}
+<<<<<<< HEAD
                   onChange={(e) => setSummary(e.target.value)}
+=======
+                  onChange={e =>
+                    setSummary(e.target.value)
+                  }
+                  maxLength="500"
+>>>>>>> 5d67041bc701b13f6f0bba5ec778e962d1d05665
                 />
               </Form.Group>
               {/*    //////////////////////////////////////
