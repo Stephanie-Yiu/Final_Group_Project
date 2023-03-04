@@ -3,6 +3,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Crop75Icon from "@mui/icons-material/Crop75";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import slapjack from "./img/slapjackscreen.png";
+import singledog from "./img/singledog.png";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { Link } from "react-router-dom";
 
@@ -15,7 +16,8 @@ function Games() {
 
       <div className="green text-center position-relative py-1 test">
         <h3>
-          OUR GAMES <SportsEsportsIcon />
+          OUR GAMES
+          <SportsEsportsIcon />
           <span className="position-absolute end-0 pe-3 d-none d-sm-inline">
             <HorizontalRuleIcon /> <Crop75Icon /> <CloseIcon />
           </span>
@@ -31,7 +33,7 @@ function Games() {
             >
               <img
                 src={slapjack}
-                alt="SlapJack_Game"
+                alt="Slap_Jack_Game"
                 className="game-img w-100"
                 id="game1"
               />
@@ -39,15 +41,19 @@ function Games() {
             <h2 className="gameText fw-bold fs-1">SlapJack</h2>
           </div>
           <div className="col-md-6 p-4  position-relative">
-            <Link to="" target="_blank" className="gamelink">
+            <Link
+              to="https://quickwittedwarlikebaitware.joannayau1996.repl.co/"
+              target="_blank"
+              className="gamelink"
+            >
               <img
-                src={slapjack}
-                alt="game2"
+                src={singledog}
+                alt="single_Dog_game"
                 className="game-img w-100"
                 id="game2"
               />
             </Link>
-            <h2 className="gameText fw-bold fs-1">GAME2</h2>
+            <h2 className="gameText fw-bold fs-1">Single Dog</h2>
           </div>
         </div>
 

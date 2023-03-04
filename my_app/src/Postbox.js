@@ -51,7 +51,7 @@ function Postbox() {
               borderBottom: " #04b6163b solid 1px",
             }}
           >
-            <td className="col-2 p-md-3 d-none d-md-block smallborder">
+            <td className="col-2 p-md-3 d-none d-md-block ">
               <Link>
                 <img alt="" className="icon" />
               </Link>
@@ -75,7 +75,7 @@ function Postbox() {
               borderBottom: " #04b6163b solid 1px",
             }}
           >
-            <td className="col-2 p-md-3 d-none d-md-block smallborder">
+            <td className="col-2 p-md-3 d-none d-md-block ">
               <Link>
                 <img alt="" className="icon" />
               </Link>
@@ -99,7 +99,7 @@ function Postbox() {
               borderBottom: " #04b6163b solid 1px",
             }}
           >
-            <td className="col-2 p-md-3 d-none d-md-block smallborder">
+            <td className="col-2 p-md-3 d-none d-md-block ">
               <Link>
                 <img alt="" className="icon" />
               </Link>
@@ -123,7 +123,7 @@ function Postbox() {
               borderBottom: " #04b6163b solid 1px",
             }}
           >
-            <td className="col-2 p-md-3 d-none d-md-block smallborder">
+            <td className="col-2 p-md-3 d-none d-md-block ">
               <Link>
                 <img alt="" className="icon" />
               </Link>
@@ -142,7 +142,7 @@ function Postbox() {
             </td>
           </tr>
           <tr className=" row w-100  align-items-center">
-            <td className="col-2 p-md-3 d-none d-md-block smallborder">
+            <td className="col-2 p-md-3 d-none d-md-block ">
               <Link>
                 <img alt="" className="icon" />
               </Link>

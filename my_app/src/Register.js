@@ -101,7 +101,7 @@ export default function Register() {
             Register
           </Button>
           <p className="mt-5 text-center">
-            Have already an account?
+            Already have an account?
             <Link
               to="/Login"
               className="d4d4 register_link ms-2 fw-bold text-decoration-none"

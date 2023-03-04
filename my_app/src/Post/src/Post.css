@@ -42,16 +42,14 @@
 }
 
 #title:focus,
-#body:focus,
-#author:focus {
+#body:focus {
   outline: none;
   border: #04b616 solid 1px;
   box-shadow: 0 0 15px #04b616;
 }
 
 #title,
-#body,
-#author {
+#body {
   outline: none;
   border: #04b616 solid 1px;
 }
