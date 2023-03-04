@@ -31,6 +31,7 @@ function Editor({ value, onChange }) {
     <>
       <ReactQuill
         value={value}
+        theme={"snow"}
         onChange={onChange}
         modules={modules}
         formats={formats}
