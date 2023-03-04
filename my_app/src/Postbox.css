@@ -1,29 +1,64 @@
+:root {
+  --green-noremal-text: #257d4b;
+  --purple-small-header: #9300fe;
+  --yellow-time: #f5ec8c;
+}
+
 .smallborder {
   position: relative;
 }
 
-.smallborder:after {
-  content: "";
+/* .smallborder:after {
+  content: '';
   height: 30px;
   width: 1px;
   position: absolute;
   right: 0;
   top: 30%;
   background-color: #04b6163b;
-}
+} */
 
 tbody {
   line-height: 30px;
 }
 
 .icon {
-  width: 60px;
-  height: 60px;
+  width: 155px;
+  height: 155px;
   object-fit: cover;
   border-radius: 100px;
-  border: #04b616 solid 2px;
+  border: #04b616 solid 0px;
 }
 
 .title:hover {
   color: #04b678;
+}
+
+/*******************post-page-style*****************/
+/*jonana can kept working on the style of the Post-page*/
+.post-page {
+  margin: 10px auto;
+}
+.post-page-cover img {
+  max-width: 100%;
+}
+
+.post-page-cover {
+  justify-content: center;
+}
+.post-page-content img {
+  max-width: 80%;
+  justify-self: center;
+}
+
+.post-page-content a,
+p,
+h1,
+h2,
+h3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center !important;
+  word-wrap: break-word;
 }

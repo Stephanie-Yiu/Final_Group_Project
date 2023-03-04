@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
+import Container from "react-bootstrap/Container";
+import "./Postbox.css";
 
 export default function PostPage() {
   const [postInfo, setPostInfo] = useState(null);
+  //   const {userInfo}=useContext()
   const { id } = useParams();
-  // catch data
+  //    catch data
   useEffect(() => {
-    fetch(`http://localhost:4000/createpost/${id}`).then((response) => {
+    fetch(`http://localhost:4000/post/${id}`).then((response) => {
       response.json().then((postInfo) => {
         setPostInfo(postInfo);
       });
@@ -17,19 +20,24 @@ export default function PostPage() {
   if (!postInfo) return "";
 
   return (
-    <div className="post-page">
-      <h1 className=" text-light">{postInfo.title}</h1>
-      <time className="text-light">
+    <Container className="post-page ">
+      <h1 className=" text-light ">{postInfo.title}</h1>
+
+      <div className="text-light ">
+        by {postInfo.author.username}{" "}
         {formatISO9075(new Date(postInfo.createdAt))}
-      </time>
-      {/* <div className="text-light">by {postInfo.author.username}</div> */}
-      <div className="image">
-        <img src={`http://localhost:/4000/${postInfo.cover}`} alt="" />
+      </div>
+
+      <div className="post-page-cover">
+        <img src={`http://localhost:4000/${postInfo.cover}`} />
       </div>
       <div
-        className="text-light"
-        dangerouslySetInnerHTML={{ __html: postInfo.content }}
+        style={{ objectFit: "scale-down" }}
+        className="text-light  post-page-content"
+        dangerouslySetInnerHTML={{
+          __html: postInfo.content,
+        }}
       />
-    </div>
+    </Container>
   );
 }
