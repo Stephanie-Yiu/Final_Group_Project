@@ -7,7 +7,7 @@ export default function PostPage() {
   const { id } = useParams();
   // catch data
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`).then((response) => {
+    fetch(`http://localhost:4000/createpost/${id}`).then((response) => {
       response.json().then((postInfo) => {
         setPostInfo(postInfo);
       });
