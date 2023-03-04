@@ -15,6 +15,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { UserContextProvider } from "./UserContext";
 import PostPage from "./PostPage";
+import EditPage from "./EditPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -30,9 +31,9 @@ root.render(
             <Route path="/Register" element={<Register />} />
             {/* post */}
             <Route path="/post" element={<PostList />} />
-
             <Route path="/createpost" element={<CreatePost />} />
             <Route path="/post/:id" element={<PostPage />} />
+            <Route path="/edit/:id" element={<EditPage />} />
           </Route>
         </Routes>
       </UserContextProvider>
