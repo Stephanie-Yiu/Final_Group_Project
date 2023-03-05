@@ -19,9 +19,9 @@ export default function PostPage() {
   const [postInfo, setPostInfo] = useState(null);
   const { userInfo } = useContext(UserContext);
   const { id } = useParams();
-  // const [commentDB, setCommentDB] = useState([]);
-  const [comments, setComments] = useState([]);
 
+  const [comments, setComments] = useState([]); //set all the comments by useParmas()
+ 
   //    catch data
   useEffect(() => {
     fetch(
@@ -39,18 +39,12 @@ export default function PostPage() {
       `http://localhost:4000/post/${id}/comment`,
     ).then(response => {
       response.json().then(comments => {
+       
         setComments(comments);
+        
       });
     });
   }, []);
-
-  // for (let i = 0; i < commentDB.length; i++) {
-  //   if (commentDB[i].postId === postInfo._id) {
-  //     setComments(commentDB[i]);
-  //   } else {
-  //     console.log('i am not belong to this post');
-  //   }
-  // }
 
   if (!postInfo) return '';
 
@@ -106,9 +100,13 @@ export default function PostPage() {
 
       <div>
         {comments.length > 0 &&
-          comments.map(comments => (
-            <Comment {...comments} /> // Post Component form PostMinLayout.js   {....post}
-          ))}
+          comments
+            .filter(
+              comment => comment.postId === id,
+            )
+            .map(comments => (
+              <Comment {...comments} /> // map out the comments
+            ))}
       </div>
     </Container>
   );

@@ -6,14 +6,13 @@ const CommentSchema = new Schema(
   {
     comment: String,
     postId: String,
-    
-    author: {
-      type: Schema.Types.ObjectId,
-      ref: 'User',
-    },
 
+    author: String,
+    // {
+    //   type: Schema.Types.ObjectId,
+    //   ref: 'User',
+    // },
   },
- 
 
   {
     timestamps: true,

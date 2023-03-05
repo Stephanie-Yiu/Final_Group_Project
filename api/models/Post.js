@@ -36,6 +36,7 @@ const PostSchema = new Schema({
 
 );
 
+
 const PostModel = model('Posts', PostSchema);
 
 module.exports = PostModel;

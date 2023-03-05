@@ -124,6 +124,7 @@ app.post(
           content,
           cover: newPath,
           author: info.id,
+          comments: [],
         });
         res.json(postDoc);
       },
@@ -193,37 +194,14 @@ app.get('/post/:id', async (req, res) => {
     id,
   ).populate('author', ['username']);
   //select what info you need
-  res.json(postDoc);
+  res.json(postDoc); //get the author name though the :id URL with req.params;
 });
 
-//create post comment
-// app.post(
-//   '/post/:id/comment',
-//   async (req, res) => {
-//     const { id } = req.params;
-//     const { comment } = req.body;
-//     const commentDoc = await Comment.create({
-//       postId: id,
-//       comment,
-//     });
-//     res.json(commentDoc);
-//     // console.log(comment);
-//     // console.log(id);
-//   },
-// );
-// app.get('/post/:id/comment', async (req, res) => {
-//   res.json(
-//     await Comment.find()
-//       .sort({ createAt: -1 })
-//       .limit(20),
-//   );
-// });
-//try to add jwt token in create comment
-//create post comment
-
 app.post(
-  '/post/:id/comment',commentMiddleware.single('file'),
+  '/post/:id/comment',
+  commentMiddleware.single('file'),
   async (req, res) => {
+    const { id } = req.params;
     const { token } = req.cookies;
     jwt.verify(
       token,
@@ -231,17 +209,22 @@ app.post(
       {},
       async (err, info) => {
         if (err) throw err;
-        const { id } = req.params;
+
         const { comment } = req.body;
         const commentDoc = await Comment.create({
           postId: id,
           comment,
-          author: info.id,
+          author: info.username, //collect the name of the user who made the comment form the Jwt,sign Token
         });
+
         res.json(commentDoc);
-        console.log(commentDoc);
+        // const postComment = Post.findById(
+        //   id,
+        // ).populate('comments.commentDoc');  // have to kept researching for the per post per comments
+        // console.log(commentDoc);
+        // console.log(postComment);
       },
-    );
+    ); //here we create new comment post
 
     // console.log(id);
   },
@@ -253,26 +236,6 @@ app.get('/post/:id/comment', async (req, res) => {
       .sort({ createAt: -1 })
       .limit(20),
   );
-});
-
-
-// const { token } = req.cookies;
-//     jwt.verify(
-//       token,
-//       secret,
-//       {},
-//       async (err, info) => {
-//         if (err) throw err;
-//         const { id } = req.params;
-//         const { comment } = req.body;
-//         const commentDoc = await Comment.create({
-//           postId: id,
-//           comment,
-//           authorId: info.id,
-//           authorId: info.username,
-//         });
-//         res.json(commentDoc);
-//       },
-//     );
+}); //here we put the commentPost on the mini PostPage Layout
 
 app.listen(4000);

@@ -1,12 +1,13 @@
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { formatISO9075 } from 'date-fns';
 import './Post.css';
 export default function Comment({
   comment,
   createdAt,
-  
+  author,
 }) {
+  // const [commentInfo, setCommentInfo] =useState(null);
+
   return (
     <>
       <tr
@@ -15,8 +16,16 @@ export default function Comment({
           borderBottom: ' #04b6163b solid 1px',
         }}>
         <td className="text-start col-md-8 px-3 px-sm-5 py-3 smallborder">
-          <p className="fw-light d4d4 m-0">
-            {comment}
+          <div
+            style={{ objectFit: 'scale-down' }}
+            className="text-light  post-page-content"
+            dangerouslySetInnerHTML={{
+              __html: comment,
+            }}
+          />
+
+          <p className="fw-light d4d4">
+            {author}
           </p>
         </td>
 
@@ -34,8 +43,15 @@ export default function Comment({
           minWidth: '0',
         }}>
         <td className="col-12 py-4 px-2 d-block">
+          <div
+            style={{ objectFit: 'scale-down' }}
+            className="text-light  post-page-content"
+            dangerouslySetInnerHTML={{
+              __html: comment,
+            }}
+          />
           <p className="fw-light d4d4 m-0">
-            {comment}
+            {author}
           </p>
           <p className="fw-light d4d4">
             {formatISO9075(new Date(createdAt))}
