@@ -4,6 +4,8 @@ import Crop75Icon from "@mui/icons-material/Crop75";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import slapjack from "./img/slapjackscreen.png";
 import singledog from "./img/singledog.png";
+import snakegame from "./img/snakegame.png";
+import choosecolor from "./img/choosecolor.png";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { Link } from "react-router-dom";
 
@@ -38,7 +40,7 @@ function Games() {
                 id="game1"
               />
             </Link>
-            <h2 className="gameText fw-bold fs-1">SlapJack</h2>
+            <h2 className="gameText fw-bold fs-1">Slap Jack</h2>
           </div>
           <div className="col-md-6 p-4  position-relative">
             <Link
@@ -59,26 +61,34 @@ function Games() {
 
         <div className="row">
           <div className="col-md-6 p-4  position-relative">
-            <Link to="" target="_blank" className="gamelink">
+            <Link
+              to="https://sanke-game.kevin14tsui.repl.co/"
+              target="_blank"
+              className="gamelink"
+            >
               <img
-                src={slapjack}
-                alt="game3"
+                src={snakegame}
+                alt="snake_game"
                 className="game-img w-100"
                 id="game3"
               />
             </Link>
-            <h2 className="gameText fw-bold fs-1">GAME3</h2>
+            <h2 className="gameText fw-bold fs-1">Snake Game</h2>
           </div>
           <div className="col-md-6 p-4  position-relative">
-            <Link to="" target="_blank" className="gamelink">
+            <Link
+              to="https://judiciousessentialdatasets.joannayau1996.repl.co/"
+              target="_blank"
+              className="gamelink"
+            >
               <img
-                src={slapjack}
-                alt="game4"
+                src={choosecolor}
+                alt="choose_color_not_name_game"
                 className="game-img w-100"
                 id="game4"
               />
             </Link>
-            <h2 className="gameText fw-bold fs-1">GAME4</h2>
+            <h2 className="gameText fw-bold fs-1">Choose Color Not Name</h2>
           </div>
         </div>
       </div>

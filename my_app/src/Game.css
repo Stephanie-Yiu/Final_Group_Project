@@ -14,9 +14,9 @@
 
 .game-img {
   max-width: 400px;
-  max-height: 300px;
+  height: 300px;
   object-fit: cover;
-  filter: brightness(60%);
+  filter: brightness(45%);
   z-index: -1;
   transition: all 0.5s ease;
 }
@@ -50,7 +50,7 @@
 }
 
 .gamelink:hover ~ .gameText {
-  filter: blur(2px);
+  opacity: 0%;
 }
 
 .gameText {
@@ -61,4 +61,5 @@
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  font-size: 5vh !important;
 }
