@@ -1,32 +1,40 @@
 import Container from 'react-bootstrap/Container';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import Editor from './Editor';
 
 export default function CommentForm() {
-
-
   const [comment, setComment] = useState('');
-  const postId = useParams();
-  const [currentPost, setCurrentPost] =
-    useState('');
+  const [redirect, setRedirect] = useState(false);
+
+  const { id } = useParams();
 
   async function handleSubmit(ev) {
-    const formdata = new FormData();
-    formdata.set('comment', comment);
-    formdata.set(' postId', postId.id);
-    const data = Object.fromEntries(formdata);
-    setCurrentPost(postId.id);
+    const data = new FormData();
+    data.set('comment', comment);
+
+    // const data = Object.fromEntries(formdata);
+
     ev.preventDefault();
-    await fetch(
-      `http://localhost:4000/post/${currentPost}/comment`,
+    const response = await fetch(
+      `http://localhost:4000/post/${id}/comment`,
       {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
+        credentials: 'include',
+        body: data,
+        // body: JSON.stringify(data),
       },
-    );
+
+    )
+      //  
+    if (response.ok) {
+ 
+      setRedirect(true);
+    }
+    if (redirect) {
+      return <Navigate to={'/post/:id'} />;
+    }
 
     // console.log(JSON.stringify(data));
   }
@@ -36,12 +44,15 @@ export default function CommentForm() {
         <h3 style={{ Color: 'white' }}>
           Comment
         </h3>
-        <textarea
-          type="comment"
+        <Editor
+          onChange={setComment}
           value={comment}
-          onChange={e =>
-            setComment(e.target.value)
-          }></textarea>
+          style={{
+            background: '#d4d4d4',
+            minHeight: '240px',
+          }}
+        />
+
         <button type="sumbit">Sumbit</button>
       </form>
     </Container>

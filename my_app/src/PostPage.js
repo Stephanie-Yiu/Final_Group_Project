@@ -19,7 +19,7 @@ export default function PostPage() {
   const [postInfo, setPostInfo] = useState(null);
   const { userInfo } = useContext(UserContext);
   const { id } = useParams();
-  const [commentDB, setCommentDB] = useState([]);
+  // const [commentDB, setCommentDB] = useState([]);
   const [comments, setComments] = useState([]);
 
   //    catch data
@@ -29,7 +29,7 @@ export default function PostPage() {
     ).then(response => {
       response.json().then(postInfo => {
         setPostInfo(postInfo);
-        console.log(postInfo._id);
+        // console.log(postInfo._id);
       });
     });
   }, []);
@@ -40,7 +40,6 @@ export default function PostPage() {
     ).then(response => {
       response.json().then(comments => {
         setComments(comments);
-        console.log(comments._postId);
       });
     });
   }, []);
@@ -52,8 +51,6 @@ export default function PostPage() {
   //     console.log('i am not belong to this post');
   //   }
   // }
-
-
 
   if (!postInfo) return '';
 

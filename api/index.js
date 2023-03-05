@@ -12,6 +12,10 @@ const multer = require('multer');
 const uploadMiddleware = multer({
   dest: 'uploads/',
 });
+
+const commentMiddleware = multer({
+  dest: 'commentUpload/',
+});
 const fs = require('fs');
 
 const cookieParser = require('cookie-parser');
@@ -22,7 +26,7 @@ const secret = 'sdsgdfgzdrgzrdgd4g5f4fgs5dvd6';
 app.use(
   cors({
     credentials: true,
-    origin: 'http://localhost:3000',
+    origin: '*', //'http://localhost:3000',
   }),
 );
 
@@ -193,55 +197,64 @@ app.get('/post/:id', async (req, res) => {
 });
 
 //create post comment
-app.post(
-  '/post/:id/comment',
-  async (req, res) => {
-    const { id } = req.params;
-    const { comment } = req.body;
-    const commentDoc = await Comment.create({
-      postId: id,
-      comment,
-    });
-    res.json(commentDoc);
-    // console.log(comment);
-    // console.log(id);
-  },
-);
-app.get('/post/:id/comment', async (req, res) => {
-  res.json(
-  await Comment.find()
- .sort({ createAt: -1 })
-   .limit(20),
-  )
-  
-});
+// app.post(
+//   '/post/:id/comment',
+//   async (req, res) => {
+//     const { id } = req.params;
+//     const { comment } = req.body;
+//     const commentDoc = await Comment.create({
+//       postId: id,
+//       comment,
+//     });
+//     res.json(commentDoc);
+//     // console.log(comment);
+//     // console.log(id);
+//   },
+// );
+// app.get('/post/:id/comment', async (req, res) => {
+//   res.json(
+//     await Comment.find()
+//       .sort({ createAt: -1 })
+//       .limit(20),
+//   );
+// });
 //try to add jwt token in create comment
 //create post comment
 
+app.post(
+  '/post/:id/comment',commentMiddleware.single('file'),
+  async (req, res) => {
+    const { token } = req.cookies;
+    jwt.verify(
+      token,
+      secret,
+      {},
+      async (err, info) => {
+        if (err) throw err;
+        const { id } = req.params;
+        const { comment } = req.body;
+        const commentDoc = await Comment.create({
+          postId: id,
+          comment,
+          author: info.id,
+        });
+        res.json(commentDoc);
+        console.log(commentDoc);
+      },
+    );
 
-// app.post('/post/:id', async (req, res) => {
-//   const { token } = req.cookies;
-//   jwt.verify(
-//     token,
-//     secret,
-//     {},
-//     async (err, info) => {
-//       if (err) throw err;
-//       const { id } = req.params;
-//       const { comment } = req.body;
-//       const commentDoc = await Comment.create({
-//         postId: id,
-//         comment,
-//         authorId: info.id,
-//         author: info.username,
-//       });
-//       res.json(commentDoc);
-//       console.log(info.id);
-//     },
-//   );
+    // console.log(id);
+  },
+);
 
-//   // console.log(id);
-// });
+app.get('/post/:id/comment', async (req, res) => {
+  res.json(
+    await Comment.find()
+      .sort({ createAt: -1 })
+      .limit(20),
+  );
+});
+
 
 // const { token } = req.cookies;
 //     jwt.verify(

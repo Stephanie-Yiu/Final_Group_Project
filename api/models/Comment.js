@@ -6,8 +6,11 @@ const CommentSchema = new Schema(
   {
     comment: String,
     postId: String,
-    // authorId: String,// future use
-    // author: String, // future use
+    
+    author: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },
 
   },
  
