@@ -18,3 +18,7 @@
   overflow: hidden;
   filter: brightness(90%);
 }
+
+.cardlink:hover {
+  color: #04b678 !important;
+}
