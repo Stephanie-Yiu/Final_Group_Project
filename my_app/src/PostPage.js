@@ -109,7 +109,7 @@ export default function PostPage() {
             <p className="text-center"> -END-</p>
           </div>
         </article>
-        <h4 style={{ Color: "white" }} className="my-5">
+        <h4 style={{ Color: "white" }} className="mt-5 pt-5 mb-3">
           Comment
         </h4>
         <div>
