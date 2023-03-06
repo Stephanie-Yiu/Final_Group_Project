@@ -10,6 +10,7 @@ import Crop75Icon from "@mui/icons-material/Crop75";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import Container from "react-bootstrap/Container";
 
 export default function PostPage() {
   const [postInfo, setPostInfo] = useState(null);

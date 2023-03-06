@@ -42,7 +42,7 @@ function Cards() {
                 className="text-decoration-none"
                 target="_blank"
               >
-                <Card.Title className="green fw-bold fs-4 my-4">
+                <Card.Title className="green fw-bold fs-4 my-4 cardlink">
                   AI and Machine Learning
                 </Card.Title>
               </Link>
