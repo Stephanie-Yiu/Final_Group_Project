@@ -1,10 +1,14 @@
 import { useEffect, useState, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
-import Container from "react-bootstrap/Container";
-import "./Postbox.css";
+import "./Post/src/Post.css";
 import { UserContext } from "./UserContext";
-import Button from "react-bootstrap/esm/Button";
+import CloseIcon from "@mui/icons-material/Close";
+import Crop75Icon from "@mui/icons-material/Crop75";
+import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
+import DeleteIcon from "@mui/icons-material/Delete";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 export default function PostPage() {
   const [postInfo, setPostInfo] = useState(null);
@@ -22,45 +26,74 @@ export default function PostPage() {
   if (!postInfo) return "";
 
   return (
-    <Container className="post-page ">
-      <h1 className=" text-light ">{postInfo.title}</h1>
-
-      <div className="text-light ">
-        by {postInfo.author.username}{" "}
-        {formatISO9075(new Date(postInfo.createdAt))}
-      </div>
-      {userInfo.id === postInfo.author._id && (
-        <div className="text-light post-page-content">
-          <Link className="py-2 px-3 my-2 " to={`/edit/${postInfo._id}`}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6 px-1"
-              style={{ height: "20px" }}
+    <div
+      className="container-fluid  d4d4 text-center pt-5 mt-2 pb-5"
+      style={{ maxWidth: "1000px" }}
+    >
+      <article className="artcontent">
+        <h2 className="fw-bold mb-3">{postInfo.title}</h2>
+        <p className="green mb-5">
+          Asked {formatISO9075(new Date(postInfo.createdAt))}
+          <br />
+          {userInfo.id === postInfo.author._id && (
+            <OverlayTrigger
+              key="right"
+              placement="right"
+              overlay={<Tooltip id="right">Edit This Post</Tooltip>}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
-              />
-            </svg>
-            Edit this post
-          </Link>
+              <span className="edit">
+                <Link
+                  to={`/edit/${postInfo._id}`}
+                  style={{ color: "rgb(199, 199, 0)" }}
+                  className="fw-bold text-decoration-none edittext"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6 px-1 "
+                    style={{ height: "20px", color: "rgb(199, 199, 0)" }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                    />
+                  </svg>
+                  Edit
+                </Link>
+              </span>
+            </OverlayTrigger>
+          )}
+        </p>
+        <div
+          className=" text-center position-relative py-1"
+          style={{
+            border: "#04b616 dashed 2px",
+            color: "#04b616",
+          }}
+        >
+          <p className="m-0">
+            {"< Written by"}{" "}
+            <span className="d4d4 fw-bold">{postInfo.author.username}</span>
+            {" /> "}
+            <span className="position-absolute end-0 pe-3 d-none d-sm-inline">
+              <HorizontalRuleIcon /> <Crop75Icon /> <CloseIcon />
+            </span>
+          </p>
         </div>
-      )}
-      <div className="post-page-cover">
-        <img src={`http://localhost:4000/${postInfo.cover}`} />
-      </div>
-      <div
-        style={{ objectFit: "scale-down" }}
-        className="text-light  post-page-content"
-        dangerouslySetInnerHTML={{
-          __html: postInfo.content,
-        }}
-      />
-    </Container>
+        <div className="blogcontainer">
+          <div
+            className="text-start p-4 postbody"
+            dangerouslySetInnerHTML={{
+              __html: postInfo.content,
+            }}
+          ></div>
+          <p className="text-center"> -END-</p>
+        </div>
+      </article>
+    </div>
   );
 }

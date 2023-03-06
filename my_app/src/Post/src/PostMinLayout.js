@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { formatISO9075 } from "date-fns";
+import { useState } from "react";
 import "./Post.css";
+import defaultimg from "./default.jpg";
 export default function Post({
   _id,
   title,
@@ -11,6 +13,7 @@ export default function Post({
   createdAt,
   author,
 }) {
+  const [imgSrc, setImgSrc] = useState(`http://localhost:4000/${cover}`);
   return (
     <>
       <tr
@@ -24,7 +27,12 @@ export default function Post({
            d-none d-md-block"
         >
           <Link to={`/post/${_id}`}>
-            <img src={`http://localhost:4000/${cover}`} className="icon" />
+            <img
+              src={imgSrc}
+              onError={() => setImgSrc(defaultimg)}
+              className="icon"
+              alt="cover"
+            />
           </Link>
         </td>
         <td className="text-start col-md-8 px-3 px-sm-5 py-3 smallborder">
