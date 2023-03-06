@@ -37,7 +37,9 @@ export default function CommentForm() {
   return (
     <Container>
       <form onSubmit={handleSubmit}>
-        <h3 style={{ Color: "white" }}>Comment</h3>
+        <p style={{ Color: "white" }} className="my5 pt-5">
+          You can leave comment here:
+        </p>
         <Editor
           onChange={setComment}
           value={comment}

@@ -109,9 +109,9 @@ export default function PostPage() {
             <p className="text-center"> -END-</p>
           </div>
         </article>
-        <h3 style={{ Color: "white" }} className="my-5">
+        <h4 style={{ Color: "white" }} className="my-5">
           Comment
-        </h3>
+        </h4>
         <div>
           {comments.length > 0 &&
             comments
