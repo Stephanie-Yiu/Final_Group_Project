@@ -100,11 +100,24 @@
   background-color: #d4d4d4;
   color: #000;
 }
-.bin {
+.edit {
   cursor: pointer;
 }
 
 .postbody,
 .commentbody {
   white-space: pre-line;
+}
+
+.edittext:hover,
+.edittext:hover > svg {
+  color: #d63636 !important;
+}
+
+.postbody img {
+  max-width: 100%;
+}
+.postbody,
+.commentcontent {
+  white-space: break-spaces;
 }

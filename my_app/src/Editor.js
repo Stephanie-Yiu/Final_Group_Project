@@ -38,6 +38,7 @@ function Editor({ value, onChange }) {
         style={{
           background: "#d4d4d4",
           minHeight: "240px",
+          color: "#000",
         }}
       />
     </>
