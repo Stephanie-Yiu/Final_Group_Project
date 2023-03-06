@@ -31,3 +31,52 @@ export default function Comment({ comment, createdAt, author }) {
     </>
   );
 }
+
+// <tr
+// className=" row w-100 align-items-center d-none d-md-flex"
+// style={{
+//   borderBottom: ' #04b6163b solid 1px',
+// }}>
+// <td className="text-start col-md-8 px-3 px-sm-5 py-3 smallborder">
+//   <div
+//     style={{ objectFit: 'scale-down' }}
+//     className="text-light  post-page-content"
+//     dangerouslySetInnerHTML={{
+//       __html: comment,
+//     }}
+//   />
+
+//   <p className="fw-light d4d4">
+//     {author}
+//   </p>
+// </td>
+
+// <td className="col-2 p-md-3 text-start ">
+//   <p className="fw-light d4d4">
+//     {formatISO9075(new Date(createdAt))}
+//   </p>
+// </td>
+// </tr>
+// {/**-------------------------------------------------------------------------------- */}
+// <tr
+// className="row w-100 align-items-center d-md-none "
+// style={{
+//   borderBottom: ' #04b6163b solid 1px',
+//   minWidth: '0',
+// }}>
+// <td className="col-12 py-4 px-2 d-block">
+//   <div
+//     style={{ objectFit: 'scale-down' }}
+//     className="text-light  post-page-content"
+//     dangerouslySetInnerHTML={{
+//       __html: comment,
+//     }}
+//   />
+//   <p className="fw-light d4d4 m-0">
+//     {author}
+//   </p>
+//   <p className="fw-light d4d4">
+//     {formatISO9075(new Date(createdAt))}
+//   </p>
+// </td>
+// </tr>
