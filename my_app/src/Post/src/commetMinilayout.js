@@ -15,14 +15,14 @@ export default function Comment({ comment, createdAt, author }) {
       >
         <div
           className="col-12 text-black p-3 commentcontent "
-          style={{ height: "80px", whiteSpace: "break-spaces" }}
+          style={{ minHeight: "80px", whiteSpace: "break-spaces" }}
           dangerouslySetInnerHTML={{
             __html: comment,
           }}
         ></div>
         <div
           className="col-12 bg-black green py-1"
-          style={{ height: "20px", borderTop: "3px solid #04b6168d" }}
+          style={{ minHeight: "20px", borderTop: "3px solid #04b6168d" }}
         >
           BY <span className="d4d4 fw-bold">{author} </span>
           {formatISO9075(new Date(createdAt))}
