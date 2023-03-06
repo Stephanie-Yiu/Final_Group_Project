@@ -4,12 +4,17 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const User = require("./models/User");
 const Post = require("./models/Post");
+const Comment = require("./models/Comment");
 const jwt = require("jsonwebtoken");
 
 const multer = require("multer");
 
 const uploadMiddleware = multer({
   dest: "uploads/",
+});
+
+const commentMiddleware = multer({
+  dest: "commentUpload/",
 });
 const fs = require("fs");
 
@@ -105,6 +110,7 @@ app.post("/createpost", uploadMiddleware.single("file"), async (req, res) => {
       content,
       cover: newPath,
       author: info.id,
+      comments: [],
     });
     res.json(postDoc);
   });
@@ -154,7 +160,39 @@ app.get("/post/:id", async (req, res) => {
   const { id } = req.params;
   const postDoc = await Post.findById(id).populate("author", ["username"]);
   //select what info you need
-  res.json(postDoc);
+  res.json(postDoc); //get the author name though the :id URL with req.params;
 });
+
+app.post(
+  "/post/:id/comment",
+  commentMiddleware.single("file"),
+  async (req, res) => {
+    const { id } = req.params;
+    const { token } = req.cookies;
+    jwt.verify(token, secret, {}, async (err, info) => {
+      if (err) throw err;
+
+      const { comment } = req.body;
+      const commentDoc = await Comment.create({
+        postId: id,
+        comment,
+        author: info.username, //collect the name of the user who made the comment form the Jwt,sign Token
+      });
+
+      res.json(commentDoc);
+      // const postComment = Post.findById(
+      //   id,
+      // ).populate('comments.commentDoc');  // have to kept researching for the per post per comments
+      // console.log(commentDoc);
+      // console.log(postComment);
+    }); //here we create new comment post
+
+    // console.log(id);
+  }
+);
+
+app.get("/post/:id/comment", async (req, res) => {
+  res.json(await Comment.find().sort({ createAt: -1 }).limit(20));
+}); //here we put the commentPost on the mini PostPage Layout
 
 app.listen(4000);

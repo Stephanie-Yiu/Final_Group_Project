@@ -20,9 +20,10 @@ export default function CreatePost() {
     data.set("file", files[0]);
 
     ev.preventDefault();
-    const response = await fetch("http://localhost:4000/createpost", {
+    const response = await
+    fetch("http://localhost:4000/createpost", {
       method: "POST",
-      mode: "no-cors",
+      // mode: "no-cors",
       body: data,
       credentials: "include",
     });

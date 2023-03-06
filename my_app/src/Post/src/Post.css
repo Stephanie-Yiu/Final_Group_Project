@@ -117,6 +117,7 @@
 .postbody img {
   max-width: 100%;
 }
-.postbody {
+.postbody,
+.commentcontent {
   white-space: break-spaces;
 }
