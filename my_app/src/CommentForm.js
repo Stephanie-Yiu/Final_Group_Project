@@ -27,10 +27,12 @@ export default function CommentForm() {
     //
     if (response.ok) {
       setRedirect(true);
+      window.location.reload();
+
     }
-    if (redirect) {
-      return <Navigate to={"/post/:id"} />;
-    }
+    // if (redirect) {
+    //   return <Navigate to={"/post/" + id} />;
+    // }
 
     // console.log(JSON.stringify(data));
   }
